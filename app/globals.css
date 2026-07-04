@@ -65,6 +65,10 @@ body {
   }
 }
 
+.animate-float-soft {
+  animation: float-soft 7s ease-in-out infinite;
+}
+
 @keyframes demo-arrow {
   0%,
   100% {

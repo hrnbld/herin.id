@@ -2,6 +2,7 @@ import Image from "next/image";
 import FadeIn from "./fade-in";
 import CountUp from "./count-up";
 import Typewriter from "./typewriter";
+import WordReveal from "./word-reveal";
 import Accordion, { type QA } from "./accordion";
 
 type Experience = {
@@ -410,8 +411,12 @@ export default function Home() {
             <FadeIn>
               <Eyebrow>About</Eyebrow>
               <h2 className="mt-4 max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
-                Fourteen years on the business side,{" "}
-                <span className="text-soft">written into code.</span>
+                <WordReveal
+                  segments={[
+                    { text: "Fourteen years on the business side," },
+                    { text: "written into code.", soft: true },
+                  ]}
+                />
               </h2>
               <p className="mt-4 max-w-md text-sm leading-relaxed text-soft">
                 When the operation and the software are designed by the same
@@ -486,8 +491,12 @@ export default function Home() {
               <FadeIn>
                 <Eyebrow tone="accent">ERP &amp; Accounting — live demo</Eyebrow>
                 <h2 className="mt-4 text-3xl font-light leading-tight tracking-tight sm:text-4xl">
-                  From transaction records{" "}
-                  <span className="text-soft">to a ledger that balances.</span>
+                  <WordReveal
+                    segments={[
+                      { text: "From transaction records" },
+                      { text: "to a ledger that balances.", soft: true },
+                    ]}
+                  />
                 </h2>
                 <p className="mt-4 text-sm leading-relaxed text-soft">
                   Signatech ERP connects every transaction: customer orders,
@@ -541,7 +550,7 @@ export default function Home() {
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(160deg,rgba(13,11,10,0.75),rgba(13,11,10,0.92))]" />
                   <div className="relative p-6 sm:p-8">
-                    <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-md">
+                    <div className="animate-float-soft rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-md">
                       <p className="text-xs font-medium text-ink">
                         Why teams switch to it
                       </p>
@@ -599,12 +608,16 @@ export default function Home() {
 
         {/* WA Commerce section */}
         <section id="wa" className="scroll-mt-24 py-16 sm:py-24">
-          <div className="mx-auto max-w-5xl px-5 sm:px-8">
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
             <FadeIn className="text-center">
               <Eyebrow tone="accent">Automation — live demo</Eyebrow>
               <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
-                WhatsApp becomes{" "}
-                <span className="text-soft">a measurable sales channel.</span>
+                <WordReveal
+                  segments={[
+                    { text: "WhatsApp becomes" },
+                    { text: "a measurable sales channel.", soft: true },
+                  ]}
+                />
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-soft">
                 A real WhatsApp commerce dashboard with safe dummy data — AI
@@ -621,13 +634,13 @@ export default function Home() {
                 <iframe
                   src={WA_DEMO_URL}
                   title="Interactive WA Commerce dashboard demo"
-                  className="h-[560px] w-full border-0 bg-[#f8f9fc]"
+                  className="h-[78vh] min-h-[640px] w-full border-0 bg-[#f8f9fc]"
                   loading="lazy"
                   allow="clipboard-read; clipboard-write"
                 />
               </BrowserCard>
             </FadeIn>
-            <div className="mt-10 grid gap-6 sm:grid-cols-3">
+            <div className="mx-auto mt-10 grid max-w-5xl gap-6 sm:grid-cols-3">
               {waChecks.map((item, i) => (
                 <FadeIn key={item} delay={i * 100}>
                   <div className="flex gap-3 text-sm leading-relaxed text-soft">
@@ -644,7 +657,9 @@ export default function Home() {
         <section id="experience" className="scroll-mt-24 py-16 sm:py-24">
           <FadeIn className="mx-auto max-w-5xl px-5 text-center sm:px-8">
             <h2 className="mx-auto max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
-              And that&apos;s not everything I&apos;ve built.
+              <WordReveal
+                segments={[{ text: "And that's not everything I've built." }]}
+              />
             </h2>
             <p className="mt-3 text-xs text-faint">
               Fourteen years across brands, commerce, and systems
@@ -675,8 +690,12 @@ export default function Home() {
             <FadeIn className="text-center">
               <Eyebrow>What I do</Eyebrow>
               <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
-                Systems that make{" "}
-                <span className="text-soft">your operation smarter.</span>
+                <WordReveal
+                  segments={[
+                    { text: "Systems that make" },
+                    { text: "your operation smarter.", soft: true },
+                  ]}
+                />
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-soft">
                 From ideas to production — I design, build, and run the
@@ -712,7 +731,9 @@ export default function Home() {
             <FadeIn className="text-center">
               <Eyebrow>FAQs</Eyebrow>
               <h2 className="mt-4 text-3xl font-light leading-tight tracking-tight sm:text-4xl">
-                Got questions? I&apos;ve got answers.
+                <WordReveal
+                  segments={[{ text: "Got questions? I've got answers." }]}
+                />
               </h2>
               <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-soft">
                 How I work, what the demos are, and what it&apos;s like to
@@ -730,8 +751,12 @@ export default function Home() {
           <div className="mx-auto max-w-5xl px-5 sm:px-8">
             <FadeIn className="text-center">
               <h2 className="mx-auto max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-5xl">
-                Let&apos;s build systems{" "}
-                <span className="text-soft">that quietly do their job.</span>
+                <WordReveal
+                  segments={[
+                    { text: "Let's build systems" },
+                    { text: "that quietly do their job.", soft: true },
+                  ]}
+                />
               </h2>
               <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-soft">
                 From first conversation to software in production — everything
@@ -754,7 +779,7 @@ export default function Home() {
             </FadeIn>
 
             <footer className="mt-16 border-t border-line pt-10 sm:mt-20">
-              <div className="grid gap-10 pb-10 sm:grid-cols-[1.4fr_1fr_1fr_1fr]">
+              <div className="grid gap-10 pb-10 sm:grid-cols-[1.6fr_1fr_1fr]">
                 <div>
                   <Logo />
                   <p className="mt-4 max-w-[230px] text-xs leading-relaxed text-faint">
@@ -764,51 +789,6 @@ export default function Home() {
                   <p className="mt-4 text-[11px] text-faint">
                     © {new Date().getFullYear()} Herin Yudha Pratama.
                   </p>
-                </div>
-                <div className="text-xs">
-                  <p className="text-faint">Menu</p>
-                  <ul className="mt-3 space-y-2.5 text-soft">
-                    <li>
-                      <a href="#services" className="hover:text-ink">
-                        Services
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#experience" className="hover:text-ink">
-                        Experience
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#faq" className="hover:text-ink">
-                        FAQ
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div className="text-xs">
-                  <p className="text-faint">Live demos</p>
-                  <ul className="mt-3 space-y-2.5 text-soft">
-                    <li>
-                      <a
-                        href="/demo/erp"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-ink"
-                      >
-                        Signatech ERP
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={WA_DEMO_URL}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="hover:text-ink"
-                      >
-                        WA Commerce
-                      </a>
-                    </li>
-                  </ul>
                 </div>
                 <div className="text-xs">
                   <p className="text-faint">Contact</p>
