@@ -43,7 +43,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="bg-blush text-ink font-sans antialiased">
+      <body className="bg-canvas text-ink font-sans antialiased">
         {children}
       </body>
     </html>
