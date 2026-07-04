@@ -1,6 +1,7 @@
 import Image from "next/image";
 import FadeIn from "./fade-in";
 import CountUp from "./count-up";
+import Typewriter from "./typewriter";
 import Accordion, { type QA } from "./accordion";
 
 type Experience = {
@@ -341,46 +342,8 @@ export default function Home() {
   return (
     <div className="p-3 sm:p-4" id="top">
       <div className="relative overflow-hidden rounded-[24px] bg-canvas text-ink sm:rounded-[28px]">
-        {/* Nav */}
-        <header className="sticky top-3 z-50 px-3 sm:top-4">
-          <div className="mx-auto flex max-w-5xl items-center justify-between gap-4 rounded-2xl border border-line bg-[#151210]/85 py-2 pl-4 pr-2 backdrop-blur-md sm:pl-5">
-            <div className="flex items-center gap-5">
-              <Logo />
-              <span className="hidden h-5 w-px bg-white/10 md:block" />
-              <nav className="hidden items-center gap-5 text-xs text-soft md:flex">
-                <a href="#services" className="transition-colors hover:text-ink">
-                  Services
-                </a>
-                <a href="#erp" className="transition-colors hover:text-ink">
-                  Demos
-                </a>
-                <a href="#experience" className="transition-colors hover:text-ink">
-                  Experience
-                </a>
-                <a href="#faq" className="transition-colors hover:text-ink">
-                  FAQ
-                </a>
-              </nav>
-            </div>
-            <div className="flex items-center gap-2">
-              <a
-                href="#erp"
-                className="hidden rounded-full border border-line bg-white/[0.05] px-4 py-2 text-xs text-ink transition-colors hover:bg-white/[0.1] sm:inline-block"
-              >
-                Live demos
-              </a>
-              <a
-                href="mailto:hello@herin.id"
-                className="rounded-full bg-white px-4 py-2 text-xs font-medium text-[#0d0b0a] transition-colors hover:bg-white/85"
-              >
-                Get in touch
-              </a>
-            </div>
-          </div>
-        </header>
-
         {/* Hero */}
-        <section className="relative -mt-14 overflow-hidden pt-32 sm:pt-40">
+        <section className="relative overflow-hidden pt-24 sm:pt-32">
           <Image
             src="/textures/rock-3.jpg"
             alt=""
@@ -392,18 +355,17 @@ export default function Home() {
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_50%_at_50%_0%,transparent_30%,#0d0b0a_100%)]" />
           <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
             <FadeIn className="flex flex-col items-center text-center">
-              <p className="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.05] px-3.5 py-1.5 text-xs text-soft backdrop-blur-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                Full-stack engineer &amp; systems architect — Bandung
-              </p>
-              <h1 className="mt-6 max-w-3xl text-4xl font-light leading-[1.08] tracking-tight text-ink sm:text-6xl">
-                I build software that runs
-                <br className="hidden sm:block" /> your business smarter.
+              <h1 className="max-w-3xl text-4xl font-light leading-[1.12] tracking-tight text-ink sm:text-6xl">
+                <Typewriter
+                  words={["Hello.", "Halo.", "Bonjour.", "Hola.", "こんにちは."]}
+                  className="text-accent-soft"
+                />
+                <br />
+                I&apos;m Herin Yudha Pratama
               </h1>
               <p className="mt-5 max-w-xl text-sm leading-relaxed text-soft sm:text-base">
-                ERP, WhatsApp commerce, dashboards, and AI agents — designed
-                around your operation and running in production, around the
-                clock.
+                I design and build business-critical software for operations,
+                commerce, and AI automation.
               </p>
               <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
                 <a
@@ -421,24 +383,8 @@ export default function Home() {
               </div>
             </FadeIn>
 
-            <FadeIn delay={150}>
-              <BrowserCard
-                url="erp.herin.id"
-                fullHref="/demo/erp"
-                className="mt-14"
-              >
-                <iframe
-                  src={ERP_DEMO_URL}
-                  title="Interactive ERP demo"
-                  loading="eager"
-                  allow="clipboard-write"
-                  className="h-[62vh] min-h-[520px] w-full bg-white"
-                />
-              </BrowserCard>
-            </FadeIn>
-
             {/* Brand marquee */}
-            <div className="py-12 sm:py-14">
+            <div className="pt-14 pb-10 sm:pt-16 sm:pb-12">
               <p className="text-center text-xs text-faint">
                 Brands I&apos;ve founded, built, and led
               </p>
@@ -454,43 +400,6 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Services */}
-        <section id="services" className="scroll-mt-24 py-16 sm:py-24">
-          <div className="mx-auto max-w-5xl px-5 sm:px-8">
-            <FadeIn className="text-center">
-              <Eyebrow>What I do</Eyebrow>
-              <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
-                Systems that make{" "}
-                <span className="text-soft">your operation smarter.</span>
-              </h2>
-              <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-soft">
-                From ideas to production — I design, build, and run the
-                software layer of a business.
-              </p>
-            </FadeIn>
-            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {services.map((s, i) => (
-                <FadeIn key={s.title} delay={(i % 3) * 100}>
-                  <div className="glow-top group h-full rounded-3xl border border-line bg-card p-6 transition-colors hover:border-white/15">
-                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white/[0.04] text-accent-soft transition-colors group-hover:text-accent">
-                      {s.icon}
-                    </span>
-                    <Eyebrow tone="accent" className="mt-5">
-                      {s.label}
-                    </Eyebrow>
-                    <h3 className="mt-1.5 text-base font-medium text-ink">
-                      {s.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-relaxed text-soft">
-                      {s.desc}
-                    </p>
-                  </div>
-                </FadeIn>
-              ))}
             </div>
           </div>
         </section>
@@ -670,6 +579,21 @@ export default function Home() {
                 </div>
               </FadeIn>
             </div>
+            <FadeIn delay={150}>
+              <BrowserCard
+                url="erp.herin.id"
+                fullHref="/demo/erp"
+                className="mt-12"
+              >
+                <iframe
+                  src={ERP_DEMO_URL}
+                  title="Interactive ERP demo"
+                  loading="lazy"
+                  allow="clipboard-write"
+                  className="h-[62vh] min-h-[520px] w-full bg-white"
+                />
+              </BrowserCard>
+            </FadeIn>
           </div>
         </section>
 
@@ -742,6 +666,43 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Services */}
+        <section id="services" className="scroll-mt-24 py-16 sm:py-24">
+          <div className="mx-auto max-w-5xl px-5 sm:px-8">
+            <FadeIn className="text-center">
+              <Eyebrow>What I do</Eyebrow>
+              <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
+                Systems that make{" "}
+                <span className="text-soft">your operation smarter.</span>
+              </h2>
+              <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-soft">
+                From ideas to production — I design, build, and run the
+                software layer of a business.
+              </p>
+            </FadeIn>
+            <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((s, i) => (
+                <FadeIn key={s.title} delay={(i % 3) * 100}>
+                  <div className="glow-top group h-full rounded-3xl border border-line bg-card p-6 transition-colors hover:border-white/15">
+                    <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white/[0.04] text-accent-soft transition-colors group-hover:text-accent">
+                      {s.icon}
+                    </span>
+                    <Eyebrow tone="accent" className="mt-5">
+                      {s.label}
+                    </Eyebrow>
+                    <h3 className="mt-1.5 text-base font-medium text-ink">
+                      {s.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-soft">
+                      {s.desc}
+                    </p>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
           </div>
         </section>
 
