@@ -2,26 +2,67 @@
 
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-display: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme {
-  --color-paper: #faf7f2;
-  --color-ink: #1c1917;
-  --color-soft: #57534e;
-  --color-faint: #a8a29e;
-  --color-line: #e5ddd2;
-  --color-accent: #b4530a;
-  --color-night: #171412;
+  /* Blush page backdrop visible around the dark canvas */
+  --color-blush: #eeb9c2;
+  /* Dark canvas + surfaces */
+  --color-canvas: #0d0b0a;
+  --color-panel: #151210;
+  --color-card: #1a1614;
+  /* Text tiers */
+  --color-ink: #f4f1ec;
+  --color-soft: #a8a29a;
+  --color-faint: #6f6a63;
+  /* Hairlines on dark */
+  --color-line: rgba(255, 255, 255, 0.08);
+  /* Rust accent */
+  --color-accent: #c94f2b;
+  --color-accent-soft: #d97a54;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  background:
+    radial-gradient(120% 90% at 15% 10%, #f6d3d8 0%, transparent 55%),
+    radial-gradient(110% 80% at 85% 90%, #e39aa8 0%, transparent 60%),
+    linear-gradient(160deg, #f2c4cc 0%, #eeb9c2 45%, #e8a7b3 100%);
+  background-attachment: fixed;
+}
+
 ::selection {
-  background: #b4530a;
-  color: #faf7f2;
+  background: #c94f2b;
+  color: #f4f1ec;
+}
+
+/* Marquee for the brand wordmark row */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 32s linear infinite;
+}
+
+/* Slow drift for glass cards */
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes demo-arrow {
@@ -32,4 +73,34 @@ html {
   50% {
     transform: translateX(6px);
   }
+}
+
+/* Warm rust glow blooming from the top edge on hover (cards, FAQ) */
+.glow-top {
+  position: relative;
+}
+.glow-top::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    70% 45% at 50% 0%,
+    rgba(201, 79, 43, 0.28),
+    transparent 70%
+  );
+}
+.glow-top:hover::after {
+  opacity: 1;
+}
+
+/* Hide scrollbar on the experience rail while keeping it scrollable */
+.rail::-webkit-scrollbar {
+  display: none;
+}
+.rail {
+  scrollbar-width: none;
 }
