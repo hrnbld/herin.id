@@ -126,10 +126,10 @@ export default function Home() {
         <Image
           src="/herin.jpg"
           alt="Herin Yudha Pratama"
-          width={1200}
-          height={1200}
+          width={400}
+          height={400}
           priority={false}
-          className="w-48 sm:w-60 lg:w-72 rounded-xl -order-1 sm:order-none"
+          className="w-44 sm:w-56 lg:w-64 aspect-square rounded-full object-cover -order-1 sm:order-none"
         />
       </section>
 
