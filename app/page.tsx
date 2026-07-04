@@ -1,6 +1,14 @@
 import Image from "next/image";
 
-const experience = [
+type Experience = {
+  role: string;
+  company: string;
+  period: string;
+  place: string;
+  detail?: string;
+};
+
+const experience: Experience[] = [
   {
     role: "Founder",
     company: "MAJI",
@@ -12,6 +20,8 @@ const experience = [
     company: "Paddy Indonesia",
     period: "2024 — 2026",
     place: "Bandung",
+    detail:
+      "Led the full commercial org — offline stores, online store & marketplace, digital marketing, CRM, KOL, and content teams.",
   },
   {
     role: "Marketing Manager",
@@ -81,6 +91,14 @@ const services = [
     title: "WhatsApp Commerce & AI Chatbots",
     desc: "Selling and serving customers where they already are — with agents that know their limits.",
   },
+  {
+    title: "Performance Marketing & Ads",
+    desc: "Meta, Google, TikTok, and Shopee ads — tens of billions of rupiah managed at a 15–20× average ROAS.",
+  },
+  {
+    title: "Dashboards & Analytics",
+    desc: "Numbers from many sources, unified and presented so they're fast to read — and right.",
+  },
 ];
 
 function SectionLabel({ no, title }: { no: string; title: string }) {
@@ -146,9 +164,15 @@ export default function Home() {
           <p>
             I spent fourteen years on the business side — founding AS GOOD
             SUPPLY CO and running it for nearly a decade, then leading
-            commercial and marketing teams at consumer brands. Somewhere along
-            the way I started building the systems my teams needed, and never
-            stopped.
+            commercial at consumer brands, running the full org: offline
+            stores, online store &amp; marketplace, digital marketing, CRM,
+            KOL, and content teams.
+          </p>
+          <p>
+            Performance marketing is home ground — tens of billions of rupiah
+            deployed across Meta, Google, TikTok, and Shopee ads at a 15–20×
+            average ROAS. Somewhere along the way I started building the
+            systems my teams needed, and never stopped.
           </p>
           <p className="text-soft">
             Today I build operational software: ERP and accounting platforms,
@@ -174,17 +198,21 @@ export default function Home() {
         <SectionLabel no="02" title="Experience" />
         <div className="divide-y divide-line">
           {experience.map((e) => (
-            <div
-              key={e.role + e.company}
-              className="py-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1"
-            >
-              <div>
-                <span className="text-lg">{e.role}</span>
-                <span className="text-soft"> — {e.company}</span>
+            <div key={e.role + e.company} className="py-5">
+              <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                <div>
+                  <span className="text-lg">{e.role}</span>
+                  <span className="text-soft"> — {e.company}</span>
+                </div>
+                <span className="text-sm text-faint tabular-nums">
+                  {e.period}
+                </span>
               </div>
-              <span className="text-sm text-faint tabular-nums">
-                {e.period}
-              </span>
+              {e.detail && (
+                <p className="mt-2 max-w-xl text-sm text-soft leading-relaxed">
+                  {e.detail}
+                </p>
+              )}
             </div>
           ))}
         </div>
