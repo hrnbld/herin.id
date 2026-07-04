@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Typewriter from "./typewriter";
 
 type Experience = {
   role: string;
@@ -132,21 +133,20 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="pt-16 pb-12 sm:pt-20 sm:pb-14">
-        <p className="text-sm tracking-widest uppercase text-soft mb-6">
-          Full-Stack Engineer &amp; Systems Architect — Bandung, Indonesia
-        </p>
-        <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl leading-[1.05] tracking-tight">
-          Herin Yudha
+      <section className="pt-20 pb-12 sm:pt-28 sm:pb-14">
+        <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl leading-[1.1] tracking-tight">
+          <span className="inline-block">
+            <Typewriter
+              words={["Hello.", "Halo.", "Bonjour.", "Hola.", "こんにちは."]}
+              className="text-accent"
+            />
+          </span>
           <br />
-          Pratama<span className="text-accent">.</span>
+          <span className="text-ink">
+            I&apos;m Herin Yudha Pratama
+          </span>
         </h1>
-        <p className="mt-10 max-w-xl text-lg sm:text-xl text-soft leading-relaxed">
-          Quiet systems behind busy businesses. I design and build ERP,
-          WhatsApp commerce, and AI automation for companies in Indonesia —
-          from database to production.
-        </p>
-        <div className="mt-10 flex gap-8 text-sm">
+        <div className="mt-12 flex gap-8 text-sm">
           <a
             href="#work"
             className="border-b border-line pb-1 text-soft hover:text-accent hover:border-accent transition-colors"
