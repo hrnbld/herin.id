@@ -50,6 +50,7 @@ const experience: Experience[] = [
 ];
 
 const ERP_DEMO_URL = "https://erp.herin.id/login?embed=1&callbackUrl=%2F";
+const WA_DEMO_URL = "https://wa-commerce-demo-herin.vercel.app/dashboard";
 
 const erpFunctions = [
   "Sales workflow: quotations, orders, delivery, invoices, payments, and returns.",
@@ -65,68 +66,18 @@ const erpAdvantages = [
   "Built for teams that need cleaner controls, faster reconciliation, and fewer spreadsheet handoffs.",
 ];
 
-const waMetrics = [
-  { label: "Revenue from chat", value: "$42,870", delta: "+18.4%" },
-  { label: "Paid orders", value: "684", delta: "+11.2%" },
-  { label: "AI-handled chats", value: "86%", delta: "+9.5%" },
-  { label: "Median first reply", value: "00:42", delta: "-31%" },
+const waCommerceFunctions = [
+  "Unified WhatsApp inbox with customer context, labels, internal notes, and quick handoff from AI to human agents.",
+  "Broadcast and template workflows for restock alerts, cart recovery, VIP drops, segmentation, scheduling, and delivery tracking.",
+  "Commerce analytics for chat revenue, paid orders, buyer funnel, response speed, campaign ROI, and customer acquisition sources.",
+  "Lead, follow-up, media, template, and AI intelligence modules using isolated dummy data in English with USD values.",
 ];
 
-const waFunnel = [
-  { label: "New conversations", value: "4,820", width: "100%" },
-  { label: "Qualified buyers", value: "2,390", width: "64%" },
-  { label: "Carts created", value: "1,104", width: "38%" },
-  { label: "Paid orders", value: "684", width: "24%" },
-];
-
-const waCampaigns = [
-  {
-    name: "Restock alert",
-    audience: "1,840",
-    revenue: "$13,420",
-    status: "Live",
-  },
-  {
-    name: "Cart recovery",
-    audience: "912",
-    revenue: "$8,760",
-    status: "Auto",
-  },
-  {
-    name: "VIP payday drop",
-    audience: "620",
-    revenue: "$6,210",
-    status: "Queued",
-  },
-];
-
-const waMessages = [
-  {
-    sender: "Customer",
-    text: "Is the travel bundle still available in black?",
-    time: "09:42",
-  },
-  {
-    sender: "AI Agent",
-    text: "Yes. I can reserve it for 30 minutes and send the checkout link.",
-    time: "09:42",
-  },
-  {
-    sender: "Customer",
-    text: "Send it. I want 2 pcs.",
-    time: "09:43",
-  },
-  {
-    sender: "AI Agent",
-    text: "Done. Total is $118.00. Payment link is ready.",
-    time: "09:43",
-  },
-];
-
-const waProducts = [
-  { name: "Travel Bundle", orders: "212", revenue: "$12.5K" },
-  { name: "Daily Set", orders: "184", revenue: "$9.8K" },
-  { name: "Mini Refill", orders: "143", revenue: "$5.7K" },
+const waCommerceAdvantages = [
+  "Turns WhatsApp into a measurable sales channel instead of a loose support inbox.",
+  "Shows how AI replies, campaign automation, checkout links, and human takeover can work inside one operating dashboard.",
+  "Built as a safe interactive demo: no production Neupix WA Core database, no real customer data, and no writes to the original repo.",
+  "Useful for international visitors because the demo uses English copy, US-style contacts, and dollar-denominated dummy commerce metrics.",
 ];
 
 const services = [
@@ -388,157 +339,79 @@ export default function Home() {
         className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-y border-[#29463c] bg-[#10251f] py-12 text-[#f9f6ee] sm:py-14"
       >
         <div className="mx-auto max-w-6xl px-6 sm:px-10">
-          <div className="grid gap-6 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
+          <div className="grid gap-6 lg:grid-cols-[0.78fr_1.22fr] lg:items-end">
             <div>
               <div className="flex items-baseline gap-3 text-sm uppercase tracking-widest text-[#9fb8aa]">
                 <span className="font-medium text-[#f4b66f]">03</span>
-                <span>WA Commerce Dashboard</span>
+                <span>Interactive WA Commerce Demo</span>
               </div>
               <h2 className="mt-5 max-w-xl font-display text-3xl leading-tight sm:text-4xl">
-                WhatsApp commerce, measured like a real storefront.
+                A real WhatsApp commerce dashboard, running with safe dummy data.
               </h2>
             </div>
             <p className="max-w-2xl leading-relaxed text-[#cbd8d0] lg:justify-self-end">
-              A dummy operating dashboard for chat-led selling: campaign
-              broadcasts, AI replies, checkout links, cart recovery, handoffs,
-              and revenue attribution from WhatsApp conversations.
+              This demo is based on the Neupix WA Commerce dashboard flow, but
+              isolated for public visitors: English interface, USD metrics,
+              dummy customers, dummy campaigns, and no connection to the
+              original Neupix WA Core production system.
             </p>
           </div>
 
-          <div className="mt-8 overflow-hidden border border-white/15 bg-[#f9f6ee] text-[#17211c] shadow-[0_28px_100px_-46px_rgba(0,0,0,0.7)]">
+          <div className="mt-8 overflow-hidden border border-white/15 bg-[#f8f9fc] text-[#17211c] shadow-[0_28px_100px_-46px_rgba(0,0,0,0.7)]">
             <div className="flex flex-wrap items-center justify-between gap-3 border-b border-[#d9dfd8] bg-white px-4 py-3">
-              <div>
-                <p className="font-display text-xl">WA Commerce Control Room</p>
-                <p className="text-xs uppercase tracking-widest text-[#6f7d74]">
-                  Demo data · Last 30 days
-                </p>
+              <div className="flex items-center gap-3">
+                <span className="flex h-3 w-3 rounded-full bg-[#ef4444]" />
+                <span className="flex h-3 w-3 rounded-full bg-[#f59e0b]" />
+                <span className="flex h-3 w-3 rounded-full bg-[#22c55e]" />
               </div>
-              <div className="flex items-center gap-2 text-xs text-[#446457]">
-                <span className="h-2 w-2 rounded-full bg-[#25d366]" />
-                AI agent online
-              </div>
+              <a
+                href={WA_DEMO_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-widest text-[#356354] hover:text-[#17211c]"
+              >
+                Open full demo
+                <span
+                  aria-hidden="true"
+                  className="inline-block animate-[demo-arrow_1s_ease-in-out_infinite] text-base leading-none"
+                >
+                  →
+                </span>
+              </a>
             </div>
+            <iframe
+              src={WA_DEMO_URL}
+              title="Interactive WA Commerce dashboard demo"
+              className="h-[760px] w-full border-0 bg-[#f8f9fc]"
+              loading="lazy"
+              allow="clipboard-read; clipboard-write"
+            />
+          </div>
 
-            <div className="grid lg:grid-cols-[1.28fr_0.72fr]">
-              <div className="border-b border-[#d9dfd8] lg:border-b-0 lg:border-r">
-                <div className="grid sm:grid-cols-4">
-                  {waMetrics.map((metric) => (
-                    <div
-                      key={metric.label}
-                      className="border-b border-r border-[#d9dfd8] p-4 last:border-r-0 sm:border-b-0"
-                    >
-                      <p className="text-xs uppercase tracking-widest text-[#7b857f]">
-                        {metric.label}
-                      </p>
-                      <p className="mt-3 font-display text-2xl">
-                        {metric.value}
-                      </p>
-                      <p className="mt-1 text-xs text-[#147044]">
-                        {metric.delta}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
-                  <div className="border-b border-[#d9dfd8] p-5 lg:border-b-0 lg:border-r">
-                    <div className="flex items-baseline justify-between">
-                      <h3 className="font-display text-xl">Sales funnel</h3>
-                      <span className="text-xs text-[#7b857f]">WhatsApp</span>
-                    </div>
-                    <div className="mt-5 space-y-4">
-                      {waFunnel.map((step) => (
-                        <div key={step.label}>
-                          <div className="flex items-center justify-between text-sm">
-                            <span>{step.label}</span>
-                            <span className="font-medium">{step.value}</span>
-                          </div>
-                          <div className="mt-2 h-2 bg-[#dfe6df]">
-                            <div
-                              className="h-full bg-[#25d366]"
-                              style={{ width: step.width }}
-                            />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="p-5">
-                    <div className="flex items-baseline justify-between">
-                      <h3 className="font-display text-xl">Campaigns</h3>
-                      <span className="text-xs text-[#7b857f]">Revenue</span>
-                    </div>
-                    <div className="mt-4 divide-y divide-[#d9dfd8]">
-                      {waCampaigns.map((campaign) => (
-                        <div
-                          key={campaign.name}
-                          className="grid grid-cols-[1fr_auto] gap-4 py-3 text-sm"
-                        >
-                          <div>
-                            <p className="font-medium">{campaign.name}</p>
-                            <p className="mt-1 text-xs text-[#7b857f]">
-                              {campaign.audience} recipients · {campaign.status}
-                            </p>
-                          </div>
-                          <p className="font-display text-lg">
-                            {campaign.revenue}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <aside className="bg-[#eef5ef]">
-                <div className="border-b border-[#d9dfd8] p-5">
-                  <div className="flex items-baseline justify-between">
-                    <h3 className="font-display text-xl">Live chat</h3>
-                    <span className="text-xs text-[#7b857f]">Auto-checkout</span>
-                  </div>
-                  <div className="mt-4 space-y-3">
-                    {waMessages.map((message) => (
-                      <div
-                        key={`${message.sender}-${message.time}-${message.text}`}
-                        className={
-                          message.sender === "AI Agent"
-                            ? "ml-8 border border-[#b9d6c4] bg-[#dff4e6] p-3"
-                            : "mr-8 border border-[#d6ded8] bg-white p-3"
-                        }
-                      >
-                        <div className="flex items-center justify-between text-xs uppercase tracking-widest text-[#7b857f]">
-                          <span>{message.sender}</span>
-                          <span>{message.time}</span>
-                        </div>
-                        <p className="mt-2 text-sm leading-relaxed">
-                          {message.text}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="p-5">
-                  <h3 className="font-display text-xl">Top products</h3>
-                  <div className="mt-4 divide-y divide-[#d1ddd3]">
-                    {waProducts.map((product) => (
-                      <div
-                        key={product.name}
-                        className="grid grid-cols-[1fr_auto] gap-4 py-3 text-sm"
-                      >
-                        <div>
-                          <p className="font-medium">{product.name}</p>
-                          <p className="text-xs text-[#7b857f]">
-                            {product.orders} orders
-                          </p>
-                        </div>
-                        <p className="font-display text-lg">{product.revenue}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </aside>
+          <div className="mt-8 grid gap-8 border-t border-white/15 pt-8 md:grid-cols-2">
+            <div>
+              <h3 className="font-display text-xl text-[#f9f6ee]">
+                What this WA Commerce dashboard does.
+              </h3>
+              <ul className="mt-4 space-y-3 text-[#cbd8d0]">
+                {waCommerceFunctions.map((item) => (
+                  <li key={item} className="border-t border-white/15 pt-3">
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-display text-xl text-[#f9f6ee]">
+                Why it matters.
+              </h3>
+              <ul className="mt-4 space-y-3 text-[#cbd8d0]">
+                {waCommerceAdvantages.map((item) => (
+                  <li key={item} className="border-t border-white/15 pt-3">
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
