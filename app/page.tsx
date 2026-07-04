@@ -276,16 +276,41 @@ export default function Home() {
           Don&apos;t take my word for it — click around.
         </h2>
         <p className="mt-6 max-w-xl text-lg text-soft leading-relaxed">
-          A working sample of the kind of system I build: invoices, inventory,
-          and a ledger that stays balanced. All sample data, in dollars.
-          Create an invoice, post it, watch the books move.
+          A working sample of the kind of system I build — sales orders,
+          invoicing, purchasing, inventory, and a ledger that stays balanced.
+          All sample data, in dollars. It&apos;s live below: create an
+          invoice, post it, watch the books move.
         </p>
-        <a
-          href="/demo/erp"
-          className="mt-8 inline-block border-b border-ink pb-1 text-lg hover:text-accent hover:border-accent transition-colors"
-        >
-          Open the demo →
-        </a>
+        <div className="mt-10 overflow-hidden rounded-2xl border border-line bg-white shadow-[0_20px_60px_-30px_rgba(28,25,23,0.35)]">
+          <div className="flex items-center gap-2 border-b border-line bg-paper/60 px-4 py-2.5">
+            <span className="flex gap-1.5">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#f87171]" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#fbbf24]" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#34d399]" />
+            </span>
+            <span className="mx-auto rounded-md bg-white px-4 py-0.5 text-xs text-faint border border-line">
+              herin.id<span className="text-ink">/demo/erp</span>
+            </span>
+            <a
+              href="/demo/erp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-soft hover:text-accent transition-colors"
+              title="Open full screen"
+            >
+              ⤢ Full screen
+            </a>
+          </div>
+          <iframe
+            src="/demo/erp"
+            title="Interactive ERP demo"
+            loading="lazy"
+            className="h-[640px] w-full"
+          />
+        </div>
+        <p className="mt-4 text-sm text-faint">
+          Interactive demo — runs entirely in your browser, resets anytime.
+        </p>
       </section>
 
       {/* Contact */}
