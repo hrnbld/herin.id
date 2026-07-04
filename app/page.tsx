@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const works = [
   {
     name: "Signatech",
@@ -105,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* Tentang */}
-      <section className="border-t border-line py-24 grid gap-10 sm:grid-cols-[200px_1fr]">
+      <section className="border-t border-line py-24 grid gap-10 sm:grid-cols-[200px_1fr_auto]">
         <SectionLabel no="01" title="Tentang" />
         <div className="max-w-xl space-y-6 text-lg leading-relaxed">
           <p>
@@ -121,6 +123,14 @@ export default function Home() {
             monitoring di production.
           </p>
         </div>
+        <Image
+          src="/herin.jpg"
+          alt="Herin Yudha Pratama"
+          width={1200}
+          height={1200}
+          priority={false}
+          className="w-48 sm:w-60 lg:w-72 rounded-xl -order-1 sm:order-none"
+        />
       </section>
 
       {/* Karya */}
