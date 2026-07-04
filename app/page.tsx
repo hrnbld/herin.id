@@ -2,6 +2,7 @@ import Image from "next/image";
 import FadeIn from "./fade-in";
 import CountUp from "./count-up";
 import Typewriter from "./typewriter";
+import Starfield from "./starfield";
 import WordReveal from "./word-reveal";
 import Accordion, { type QA } from "./accordion";
 
@@ -347,9 +348,10 @@ export default function Home() {
             fill
             priority
             sizes="100vw"
-            className="pointer-events-none object-cover object-top opacity-50 [mask-image:linear-gradient(to_bottom,black,transparent_78%)]"
+            className="pointer-events-none object-cover object-top opacity-35 [mask-image:linear-gradient(to_bottom,black,transparent_78%)]"
           />
           <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_50%_at_50%_0%,transparent_30%,#0d0b0a_100%)]" />
+          <Starfield className="[mask-image:linear-gradient(to_bottom,black_60%,transparent)]" />
           <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
             <FadeIn className="flex flex-col items-center text-center">
               <h1 className="max-w-3xl text-4xl font-light leading-[1.12] tracking-tight text-ink sm:text-6xl">
