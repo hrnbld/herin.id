@@ -1,31 +1,64 @@
 import Image from "next/image";
 
+const experience = [
+  {
+    role: "Founder",
+    company: "MAJI",
+    period: "2023 — Now",
+    place: "Bandung",
+  },
+  {
+    role: "Head of Commercial",
+    company: "Paddy Indonesia",
+    period: "2024 — 2026",
+    place: "Bandung",
+  },
+  {
+    role: "Marketing Manager",
+    company: "PORTEE",
+    period: "2023 — 2024",
+    place: "Bandung",
+  },
+  {
+    role: "Commercial Lead & Digital Marketing Manager",
+    company: "Visval",
+    period: "2021 — 2022",
+    place: "Bandung",
+  },
+  {
+    role: "Founder",
+    company: "AS GOOD SUPPLY CO",
+    period: "2012 — 2021",
+    place: "Bandung",
+  },
+];
+
 const works = [
   {
     name: "Signatech",
     tag: "ERP · SaaS",
-    desc: "Platform ERP dan akuntansi untuk distribusi farmasi — pembelian, penjualan, inventori, dan buku besar dalam satu sistem yang dipakai harian, multi-tenant.",
+    desc: "ERP and accounting platform for pharmaceutical distribution — purchasing, sales, inventory, and general ledger in one multi-tenant system, used daily.",
     href: "https://signatech.id",
     label: "signatech.id",
   },
   {
     name: "Farmatek",
     tag: "E-commerce · WhatsApp AI",
-    desc: "Apotek digital dengan agen WhatsApp — katalog produk, pemesanan, dan layanan pelanggan yang berjalan otomatis di aplikasi chat yang dipakai semua orang.",
+    desc: "Digital pharmacy with a WhatsApp agent — product catalog, ordering, and customer service running automatically inside the chat app everyone already uses.",
     href: "https://farmatek.id",
     label: "farmatek.id",
   },
   {
     name: "Neupix WA Commerce",
-    tag: "Produk · Multi-tenant",
-    desc: "Mesin WhatsApp commerce whitelabel — satu inti, banyak tenant, dengan guardrail per industri. Dipakai untuk farmasi dan kosmetik, siap dipasang untuk yang berikutnya.",
+    tag: "Product · Multi-tenant",
+    desc: "White-label WhatsApp commerce engine — one core, many tenants, with per-industry guardrails. Serving pharmacy and cosmetics, ready for the next one.",
     href: null,
     label: null,
   },
   {
     name: "Alcavella",
-    tag: "Analitik · Ads",
-    desc: "Dashboard analitik iklan lintas platform — Meta, TikTok, dan marketplace — supaya keputusan budget harian diambil dari angka yang bisa dipercaya.",
+    tag: "Analytics · Ads",
+    desc: "Cross-platform advertising analytics dashboard — Meta, TikTok, and marketplaces — so daily budget decisions come from numbers you can trust.",
     href: "https://alcavella.id",
     label: "alcavella.id",
   },
@@ -33,20 +66,20 @@ const works = [
 
 const services = [
   {
-    title: "ERP & Sistem Akuntansi",
-    desc: "Dari pencatatan transaksi sampai buku besar yang seimbang. Sistem yang mengikuti alur bisnis, bukan sebaliknya.",
+    title: "AI Automation & Agent Orchestration",
+    desc: "Multi-agent AI systems that can weigh a decision, not just follow rules — running around the clock, monitored, and accountable.",
   },
   {
-    title: "WhatsApp Commerce & Chatbot AI",
-    desc: "Jualan dan layanan pelanggan di tempat pelanggan Anda sudah berada — dengan agen yang tahu batasnya.",
+    title: "Full-Stack App Development",
+    desc: "Web apps, dashboards, and internal tools built end-to-end — from database and architecture to production and monitoring.",
   },
   {
-    title: "AI Agent & Automasi",
-    desc: "Automasi yang bisa menimbang, bukan sekadar menjalankan aturan. Berjalan 24 jam, diawasi, dan bisa dipertanggungjawabkan.",
+    title: "ERP & Accounting Systems",
+    desc: "From transaction records to a ledger that balances. Systems that follow the business flow, not the other way around.",
   },
   {
-    title: "Dashboard & Analitik",
-    desc: "Data dari banyak sumber, disatukan dan disajikan supaya cepat dibaca — dan benar.",
+    title: "WhatsApp Commerce & AI Chatbots",
+    desc: "Selling and serving customers where they already are — with agents that know their limits.",
   },
 ];
 
@@ -66,11 +99,11 @@ export default function Home() {
       <header className="flex items-center justify-between py-8 text-sm">
         <span className="font-display text-lg">herin.id</span>
         <nav className="flex gap-6 text-soft">
-          <a href="#karya" className="hover:text-ink transition-colors">
-            Karya
+          <a href="#work" className="hover:text-ink transition-colors">
+            Work
           </a>
-          <a href="#kontak" className="hover:text-ink transition-colors">
-            Kontak
+          <a href="#contact" className="hover:text-ink transition-colors">
+            Contact
           </a>
         </nav>
       </header>
@@ -78,7 +111,7 @@ export default function Home() {
       {/* Hero */}
       <section className="pt-20 pb-28 sm:pt-32 sm:pb-40">
         <p className="text-sm tracking-widest uppercase text-soft mb-6">
-          Full-Stack Engineer &amp; Systems Architect — Bandung
+          Full-Stack Engineer &amp; Systems Architect — Bandung, Indonesia
         </p>
         <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl leading-[1.05] tracking-tight">
           Herin Yudha
@@ -86,41 +119,44 @@ export default function Home() {
           Pratama<span className="text-accent">.</span>
         </h1>
         <p className="mt-10 max-w-xl text-lg sm:text-xl text-soft leading-relaxed">
-          Sistem yang rapi di belakang bisnis yang ramai. Saya merancang dan
-          membangun ERP, WhatsApp commerce, dan automasi AI untuk bisnis di
-          Indonesia — dari database sampai production.
+          Quiet systems behind busy businesses. I design and build ERP,
+          WhatsApp commerce, and AI automation for companies in Indonesia —
+          from database to production.
         </p>
         <div className="mt-10 flex gap-8 text-sm">
           <a
-            href="#karya"
+            href="#work"
             className="border-b border-ink pb-1 hover:text-accent hover:border-accent transition-colors"
           >
-            Lihat karya ↓
+            See the work ↓
           </a>
           <a
-            href="#kontak"
+            href="#contact"
             className="border-b border-line pb-1 text-soft hover:text-accent hover:border-accent transition-colors"
           >
-            Kontak
+            Contact
           </a>
         </div>
       </section>
 
-      {/* Tentang */}
+      {/* About */}
       <section className="border-t border-line py-24 grid gap-10 sm:grid-cols-[200px_1fr_auto]">
-        <SectionLabel no="01" title="Tentang" />
+        <SectionLabel no="01" title="About" />
         <div className="max-w-xl space-y-6 text-lg leading-relaxed">
           <p>
-            Saya membangun sistem operasional untuk bisnis: ERP dan akuntansi,
-            commerce lewat WhatsApp, dashboard, dan agent AI yang bekerja
-            sepanjang hari. Pendekatan saya sederhana — pahami alur bisnisnya
-            dulu, baru tulis kodenya.
+            I spent fourteen years on the business side — founding AS GOOD
+            SUPPLY CO and running it for nearly a decade, then leading
+            commercial and marketing teams at consumer brands. Somewhere along
+            the way I started building the systems my teams needed, and never
+            stopped.
           </p>
           <p className="text-soft">
-            Sehari-hari saya bekerja end-to-end dengan TypeScript, Node.js,
-            Python, React, dan PostgreSQL — ditambah LLM untuk automasi yang
-            butuh penilaian, bukan cuma aturan. Dari arsitektur sampai
-            monitoring di production.
+            Today I build operational software: ERP and accounting platforms,
+            WhatsApp commerce, dashboards, and AI agents that work around the
+            clock. My approach is simple — understand the business flow first,
+            then write the code. TypeScript, Node.js, Python, React, and
+            PostgreSQL, plus LLM orchestration for automation that needs
+            judgment, not just rules.
           </p>
         </div>
         <Image
@@ -133,9 +169,30 @@ export default function Home() {
         />
       </section>
 
-      {/* Karya */}
-      <section id="karya" className="border-t border-line py-24">
-        <SectionLabel no="02" title="Karya Terpilih" />
+      {/* Experience */}
+      <section className="border-t border-line py-24 grid gap-10 sm:grid-cols-[200px_1fr]">
+        <SectionLabel no="02" title="Experience" />
+        <div className="divide-y divide-line">
+          {experience.map((e) => (
+            <div
+              key={e.role + e.company}
+              className="py-5 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1"
+            >
+              <div>
+                <span className="text-lg">{e.role}</span>
+                <span className="text-soft"> — {e.company}</span>
+              </div>
+              <span className="text-sm text-faint tabular-nums">
+                {e.period}
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Work */}
+      <section id="work" className="border-t border-line py-24">
+        <SectionLabel no="03" title="Selected Work" />
         <div className="mt-14 divide-y divide-line">
           {works.map((w) => (
             <article key={w.name} className="py-10 group">
@@ -172,9 +229,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Layanan */}
+      {/* What I Do */}
       <section className="border-t border-line py-24">
-        <SectionLabel no="03" title="Yang Saya Kerjakan" />
+        <SectionLabel no="04" title="What I Do" />
         <div className="mt-14 grid gap-x-12 gap-y-14 sm:grid-cols-2">
           {services.map((s) => (
             <div key={s.title}>
@@ -185,12 +242,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Kontak */}
-      <section id="kontak" className="border-t border-line py-24 sm:py-32">
-        <SectionLabel no="04" title="Kontak" />
+      {/* Contact */}
+      <section id="contact" className="border-t border-line py-24 sm:py-32">
+        <SectionLabel no="05" title="Contact" />
         <p className="mt-12 max-w-xl text-lg text-soft leading-relaxed">
-          Punya proyek, atau mau ngobrol dulu soal sistemnya? Email paling
-          cepat sampai.
+          Have a project in mind, or want to talk systems first? Email is the
+          fastest way to reach me.
         </p>
         <a
           href="mailto:surel.herin@gmail.com"
@@ -213,7 +270,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t border-line py-10 flex flex-wrap justify-between gap-4 text-sm text-faint">
         <span>© {new Date().getFullYear()} Herin Yudha Pratama</span>
-        <span>Dibuat di Bandung.</span>
+        <span>Built in Bandung.</span>
       </footer>
     </main>
   );

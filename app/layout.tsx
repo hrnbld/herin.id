@@ -17,14 +17,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://herin.id"),
   title: "Herin Yudha Pratama — Full-Stack Engineer & Systems Architect",
   description:
-    "Merancang dan membangun ERP, WhatsApp commerce, dan automasi AI untuk bisnis di Indonesia — dari database sampai production. Berbasis di Bandung.",
+    "I design and build ERP, WhatsApp commerce, and AI automation for companies in Indonesia — from database to production. Based in Bandung.",
   openGraph: {
     title: "Herin Yudha Pratama",
     description:
-      "Full-Stack Engineer & Systems Architect — ERP, WhatsApp commerce, dan automasi AI untuk bisnis di Indonesia.",
+      "Full-Stack Engineer & Systems Architect — ERP, WhatsApp commerce, and AI automation for companies in Indonesia.",
     url: "https://herin.id",
     siteName: "herin.id",
-    locale: "id_ID",
+    locale: "en_US",
     type: "website",
   },
 };
@@ -33,7 +33,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="id" className={`${fraunces.variable} ${inter.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${inter.variable}`}>
       <body className="bg-paper text-ink font-sans antialiased">
         {children}
       </body>
