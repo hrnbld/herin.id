@@ -19,8 +19,6 @@ const experience: Experience[] = [
     company: "MAJI",
     period: "2023 — Now",
     place: "Bandung",
-    detail:
-      "Building a product company from zero — brand, operations, and every system underneath it.",
   },
   {
     role: "Head of Commercial",
@@ -51,8 +49,6 @@ const experience: Experience[] = [
     company: "AS GOOD SUPPLY CO",
     period: "2012 — 2021",
     place: "Bandung",
-    detail:
-      "Founded and ran an apparel supply business for nearly a decade — production, wholesale, and retail.",
   },
 ];
 
@@ -423,64 +419,64 @@ export default function Home() {
                 person, the seams disappear.
               </p>
             </FadeIn>
-            <FadeIn delay={100}>
-              <div className="relative mt-10 overflow-hidden rounded-3xl border border-line">
+            <div className="mt-10 grid gap-12 lg:grid-cols-[1.4fr_auto] lg:items-start">
+              <FadeIn
+                delay={100}
+                className="max-w-xl space-y-6 text-base leading-relaxed text-soft"
+              >
+                <p>
+                  I spent fourteen years on the business side — founding AS
+                  GOOD SUPPLY CO and running it for nearly a decade, then
+                  leading commercial at consumer brands, running the full org:
+                  offline stores, online store &amp; marketplace, digital
+                  marketing, CRM, KOL, and content teams.
+                </p>
+                <p>
+                  Performance marketing is home ground — tens of billions of
+                  rupiah deployed across Meta, Google, TikTok, and Shopee ads
+                  at a 15–20× average ROAS. Somewhere along the way I started
+                  building the systems my teams needed, and never stopped.
+                </p>
+                <p className="text-faint">
+                  Today I build operational software: ERP and accounting
+                  platforms, WhatsApp commerce, dashboards, and AI agents that
+                  work around the clock. My approach is simple — understand
+                  the business flow first, then write the code. The tools
+                  change; the goal doesn&apos;t: systems that quietly do their
+                  job every day.
+                </p>
+              </FadeIn>
+              <FadeIn
+                delay={200}
+                className="flex items-center gap-8 lg:flex-col lg:items-start lg:gap-10"
+              >
                 <Image
-                  src="/textures/rock-1.jpg"
-                  alt=""
-                  fill
-                  sizes="(min-width: 1024px) 1024px, 100vw"
-                  className="object-cover opacity-60"
+                  src="/herin.jpg"
+                  alt="Herin Yudha Pratama"
+                  width={400}
+                  height={400}
+                  className="aspect-square w-40 rounded-full object-cover sm:w-52"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(13,11,10,0.92)_20%,rgba(13,11,10,0.55)_60%,rgba(13,11,10,0.85))]" />
-                <div className="relative grid gap-10 p-7 sm:p-12 lg:grid-cols-[1.5fr_auto]">
+                <div className="flex gap-10 lg:flex-col lg:gap-6">
                   <div>
-                    <p className="max-w-xl text-lg font-medium leading-relaxed text-ink sm:text-2xl">
-                      &ldquo;I founded and ran brands for fourteen years before
-                      I wrote production code. Somewhere along the way I
-                      started building the systems my teams needed — and never
-                      stopped. Understand the business flow first, then write
-                      the code.&rdquo;
+                    <p className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
+                      <CountUp value={20} prefix="15–" suffix="×" />
                     </p>
-                    <div className="mt-8 flex items-center gap-3">
-                      <Image
-                        src="/herin.jpg"
-                        alt="Herin Yudha Pratama"
-                        width={44}
-                        height={44}
-                        className="h-11 w-11 rounded-full object-cover grayscale"
-                      />
-                      <div className="text-xs">
-                        <p className="font-medium text-ink">
-                          Herin Yudha Pratama
-                        </p>
-                        <p className="mt-0.5 text-soft">
-                          Founder, MAJI — Bandung, Indonesia
-                        </p>
-                      </div>
-                    </div>
+                    <p className="mt-1 max-w-[150px] text-xs leading-relaxed text-soft">
+                      Average ROAS across Meta, Google, TikTok &amp; Shopee
+                    </p>
                   </div>
-                  <div className="flex gap-10 lg:flex-col lg:justify-center lg:gap-8">
-                    <div>
-                      <p className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
-                        <CountUp value={20} prefix="15–" suffix="×" />
-                      </p>
-                      <p className="mt-1 max-w-[140px] text-xs leading-relaxed text-soft">
-                        Average ROAS across Meta, Google, TikTok &amp; Shopee
-                      </p>
-                    </div>
-                    <div>
-                      <p className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
-                        <CountUp value={10} prefix="Rp" suffix="B+" />
-                      </p>
-                      <p className="mt-1 max-w-[140px] text-xs leading-relaxed text-soft">
-                        Ad spend deployed and managed
-                      </p>
-                    </div>
+                  <div>
+                    <p className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
+                      <CountUp value={10} prefix="Rp" suffix="B+" />
+                    </p>
+                    <p className="mt-1 max-w-[150px] text-xs leading-relaxed text-soft">
+                      Ad spend deployed and managed
+                    </p>
                   </div>
                 </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           </div>
         </section>
 
@@ -655,34 +651,44 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Experience rail */}
+        {/* Experience */}
         <section id="experience" className="scroll-mt-24 py-16 sm:py-24">
-          <FadeIn className="mx-auto max-w-5xl px-5 text-center sm:px-8">
-            <h2 className="mx-auto max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
-              <WordReveal
-                segments={[{ text: "And that's not everything I've built." }]}
-              />
-            </h2>
-            <p className="mt-3 text-xs text-faint">
-              Fourteen years across brands, commerce, and systems
-            </p>
-          </FadeIn>
-          <div className="rail mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 sm:px-[max(1.25rem,calc((100vw-64rem)/2))]">
-            {experience.map((e) => (
-              <div
-                key={e.role + e.company}
-                className="glow-top flex w-[300px] shrink-0 snap-start flex-col justify-between rounded-3xl border border-line bg-card p-6 sm:w-[340px]"
-              >
-                <p className="text-sm leading-relaxed text-soft">{e.detail}</p>
-                <div className="mt-8 border-t border-line pt-4">
-                  <p className="text-sm font-medium text-ink">{e.company}</p>
-                  <p className="mt-1 text-xs text-soft">{e.role}</p>
-                  <p className="mt-1 text-xs text-faint tabular-nums">
-                    {e.period} · {e.place}
-                  </p>
-                </div>
-              </div>
-            ))}
+          <div className="mx-auto max-w-3xl px-5 sm:px-8">
+            <FadeIn className="text-center">
+              <Eyebrow>Experience</Eyebrow>
+              <h2 className="mx-auto mt-4 max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
+                <WordReveal
+                  segments={[
+                    { text: "And that's not everything I've built." },
+                  ]}
+                />
+              </h2>
+              <p className="mt-3 text-xs text-faint">
+                Fourteen years across brands, commerce, and systems
+              </p>
+            </FadeIn>
+            <div className="mt-10 border-t border-line">
+              {experience.map((e, i) => (
+                <FadeIn key={e.role + e.company} delay={i * 80}>
+                  <div className="border-b border-line py-5">
+                    <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-1">
+                      <div>
+                        <span className="text-base text-ink">{e.role}</span>
+                        <span className="text-soft"> — {e.company}</span>
+                      </div>
+                      <span className="text-xs text-faint tabular-nums">
+                        {e.period} · {e.place}
+                      </span>
+                    </div>
+                    {e.detail && (
+                      <p className="mt-2 max-w-xl text-sm leading-relaxed text-soft">
+                        {e.detail}
+                      </p>
+                    )}
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
           </div>
         </section>
 
