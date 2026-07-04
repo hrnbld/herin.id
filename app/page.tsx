@@ -608,7 +608,9 @@ export default function Home() {
 
         {/* WA Commerce section */}
         <section id="wa" className="scroll-mt-24 py-16 sm:py-24">
-          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          {/* Wide container: the embedded dashboard collapses to its mobile
+              layout under 1100px of iframe width, so give it every pixel. */}
+          <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
             <FadeIn className="text-center">
               <Eyebrow tone="accent">Automation — live demo</Eyebrow>
               <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
@@ -634,7 +636,7 @@ export default function Home() {
                 <iframe
                   src={WA_DEMO_URL}
                   title="Interactive WA Commerce dashboard demo"
-                  className="h-[78vh] min-h-[640px] w-full border-0 bg-[#f8f9fc]"
+                  className="h-[80vh] min-h-[660px] w-full border-0 bg-[#f8f9fc]"
                   loading="lazy"
                   allow="clipboard-read; clipboard-write"
                 />
