@@ -74,6 +74,8 @@ const works = [
   },
 ];
 
+const ERP_DEMO_URL = "https://erp.herin.id/login?embed=1&callbackUrl=%2F";
+
 const services = [
   {
     title: "AI Automation & Agent Orchestration",
@@ -120,6 +122,9 @@ export default function Home() {
           <a href="#work" className="hover:text-ink transition-colors">
             Work
           </a>
+          <a href="#demo" className="hover:text-ink transition-colors">
+            Demo
+          </a>
           <a href="#contact" className="hover:text-ink transition-colors">
             Contact
           </a>
@@ -127,7 +132,7 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="pt-20 pb-28 sm:pt-32 sm:pb-40">
+      <section className="pt-16 pb-12 sm:pt-20 sm:pb-14">
         <p className="text-sm tracking-widest uppercase text-soft mb-6">
           Full-Stack Engineer &amp; Systems Architect — Bandung, Indonesia
         </p>
@@ -144,15 +149,15 @@ export default function Home() {
         <div className="mt-10 flex gap-8 text-sm">
           <a
             href="#work"
-            className="border-b border-ink pb-1 hover:text-accent hover:border-accent transition-colors"
+            className="border-b border-line pb-1 text-soft hover:text-accent hover:border-accent transition-colors"
           >
-            See the work ↓
+            See the work
           </a>
           <a
             href="#contact"
-            className="border-b border-line pb-1 text-soft hover:text-accent hover:border-accent transition-colors"
+            className="border-b border-ink pb-1 hover:text-accent hover:border-accent transition-colors"
           >
-            Contact
+            hello@herin.id
           </a>
         </div>
       </section>
@@ -192,9 +197,80 @@ export default function Home() {
         />
       </section>
 
+      {/* Live Demo */}
+      <section
+        id="demo"
+        className="relative left-1/2 right-1/2 -mx-[50vw] w-screen border-y border-line bg-[#f4f6f3] py-10 sm:py-12"
+      >
+        <div className="mx-auto max-w-6xl px-6 sm:px-10">
+          <div className="grid gap-8 lg:grid-cols-[0.78fr_1fr] lg:items-end">
+            <div>
+              <SectionLabel no="02" title="Interactive Demo" />
+              <h2 className="mt-5 max-w-2xl font-display text-3xl leading-tight sm:text-4xl">
+                Signatech ERP, live inside this page.
+              </h2>
+            </div>
+            <div className="max-w-xl lg:justify-self-end">
+              <p className="leading-relaxed text-soft">
+                Open the working demo below: sales, purchasing, inventory, and
+                accounting flows using isolated sample data, English labels, and
+                USD amounts.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2 text-xs uppercase tracking-widest text-faint">
+                <span className="border border-line bg-white px-3 py-2">
+                  Dummy DB
+                </span>
+                <span className="border border-line bg-white px-3 py-2">
+                  English UI
+                </span>
+                <span className="border border-line bg-white px-3 py-2">
+                  USD
+                </span>
+                <span className="border border-line bg-white px-3 py-2">
+                  demo@herin.id
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative mt-8">
+            <p className="absolute -top-8 right-4 hidden font-display text-sm italic text-soft lg:block">
+              Interactive ERP demo
+            </p>
+            <div className="overflow-hidden rounded-lg border border-[#d7d9d0] bg-white shadow-[0_26px_90px_-42px_rgba(28,25,23,0.55)]">
+              <div className="flex items-center gap-3 border-b border-line bg-white px-4 py-3 text-sm">
+                <span className="flex shrink-0 gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#ef4444]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#f59e0b]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#22c55e]" />
+                </span>
+                <span className="min-w-0 flex-1 truncate border border-line bg-paper px-3 py-1 text-center text-xs text-soft">
+                  https://<span className="text-ink">erp.herin.id</span>
+                </span>
+                <a
+                  href="/demo/erp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0 border-b border-line pb-0.5 text-xs text-soft transition-colors hover:border-accent hover:text-accent"
+                >
+                  Full screen
+                </a>
+              </div>
+              <iframe
+                src={ERP_DEMO_URL}
+                title="Interactive ERP demo"
+                loading="eager"
+                allow="clipboard-write"
+                className="h-[74vh] min-h-[620px] w-full bg-white"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Experience */}
       <section className="border-t border-line py-24 grid gap-10 sm:grid-cols-[200px_1fr]">
-        <SectionLabel no="02" title="Experience" />
+        <SectionLabel no="03" title="Experience" />
         <div className="divide-y divide-line">
           {experience.map((e) => (
             <div key={e.role + e.company} className="py-5">
@@ -219,7 +295,7 @@ export default function Home() {
 
       {/* Work */}
       <section id="work" className="border-t border-line py-24">
-        <SectionLabel no="03" title="Selected Work" />
+        <SectionLabel no="04" title="Selected Work" />
         <div className="mt-14 divide-y divide-line">
           {works.map((w) => (
             <article key={w.name} className="py-10 group">
@@ -258,7 +334,7 @@ export default function Home() {
 
       {/* What I Do */}
       <section className="border-t border-line py-24">
-        <SectionLabel no="04" title="What I Do" />
+        <SectionLabel no="05" title="What I Do" />
         <div className="mt-14 grid gap-x-12 gap-y-14 sm:grid-cols-2">
           {services.map((s) => (
             <div key={s.title}>
@@ -269,50 +345,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Live Demo */}
-      <section className="border-t border-line py-24">
-        <SectionLabel no="05" title="Live Demo" />
-        <h2 className="mt-12 font-display text-3xl sm:text-4xl max-w-2xl">
-          Don&apos;t take my word for it — click around.
-        </h2>
-        <p className="mt-6 max-w-xl text-lg text-soft leading-relaxed">
-          A working sample of the kind of system I build — sales orders,
-          invoicing, purchasing, inventory, and a ledger that stays balanced.
-          All sample data, in dollars. It&apos;s live below: create an
-          invoice, post it, watch the books move.
-        </p>
-        <div className="mt-10 overflow-hidden rounded-2xl border border-line bg-white shadow-[0_20px_60px_-30px_rgba(28,25,23,0.35)]">
-          <div className="flex items-center gap-2 border-b border-line bg-paper/60 px-4 py-2.5">
-            <span className="flex gap-1.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-[#f87171]" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#fbbf24]" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#34d399]" />
-            </span>
-            <span className="mx-auto rounded-md bg-white px-4 py-0.5 text-xs text-faint border border-line">
-              herin.id<span className="text-ink">/demo/erp</span>
-            </span>
-            <a
-              href="/demo/erp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-soft hover:text-accent transition-colors"
-              title="Open full screen"
-            >
-              ⤢ Full screen
-            </a>
-          </div>
-          <iframe
-            src="/demo/erp"
-            title="Interactive ERP demo"
-            loading="lazy"
-            className="h-[640px] w-full"
-          />
-        </div>
-        <p className="mt-4 text-sm text-faint">
-          Interactive demo — runs entirely in your browser, resets anytime.
-        </p>
-      </section>
-
       {/* Contact */}
       <section id="contact" className="border-t border-line py-24 sm:py-32">
         <SectionLabel no="06" title="Contact" />
@@ -321,10 +353,10 @@ export default function Home() {
           fastest way to reach me.
         </p>
         <a
-          href="mailto:surel.herin@gmail.com"
+          href="mailto:hello@herin.id"
           className="mt-6 inline-block font-display text-3xl sm:text-5xl hover:text-accent transition-colors break-all"
         >
-          surel.herin@gmail.com
+          hello@herin.id
         </a>
         <div className="mt-10 flex gap-6 text-sm text-soft">
           <a

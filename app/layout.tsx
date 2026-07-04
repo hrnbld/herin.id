@@ -18,6 +18,20 @@ export const metadata: Metadata = {
   title: "Herin Yudha Pratama — Full-Stack Engineer & Systems Architect",
   description:
     "I design and build ERP, WhatsApp commerce, and AI automation for companies in Indonesia — from database to production. Based in Bandung.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    other: [
+      {
+        rel: "manifest",
+        url: "/site.webmanifest",
+      },
+    ],
+  },
   openGraph: {
     title: "Herin Yudha Pratama",
     description:
@@ -26,6 +40,7 @@ export const metadata: Metadata = {
     siteName: "herin.id",
     locale: "en_US",
     type: "website",
+    images: [{ url: "/herin.jpg", width: 400, height: 400 }],
   },
 };
 
