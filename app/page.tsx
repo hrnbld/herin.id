@@ -337,8 +337,8 @@ function BrowserCard({
 
 export default function Home() {
   return (
-    <div className="p-3 sm:p-4" id="top">
-      <div className="relative overflow-hidden rounded-[24px] bg-canvas text-ink sm:rounded-[28px]">
+    <div id="top">
+      <div className="relative overflow-hidden bg-canvas text-ink">
         {/* Hero */}
         <section className="relative overflow-hidden pt-24 sm:pt-32">
           <Image

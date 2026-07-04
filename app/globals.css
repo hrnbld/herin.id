@@ -28,11 +28,7 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(120% 90% at 15% 10%, #f6d3d8 0%, transparent 55%),
-    radial-gradient(110% 80% at 85% 90%, #e39aa8 0%, transparent 60%),
-    linear-gradient(160deg, #f2c4cc 0%, #eeb9c2 45%, #e8a7b3 100%);
-  background-attachment: fixed;
+  background: #0d0b0a;
 }
 
 ::selection {
