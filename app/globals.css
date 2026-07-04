@@ -23,3 +23,13 @@ html {
   background: #b4530a;
   color: #faf7f2;
 }
+
+@keyframes demo-arrow {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
