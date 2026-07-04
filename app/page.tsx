@@ -178,9 +178,8 @@ export default function Home() {
             Today I build operational software: ERP and accounting platforms,
             WhatsApp commerce, dashboards, and AI agents that work around the
             clock. My approach is simple — understand the business flow first,
-            then write the code. TypeScript, Node.js, Python, React, and
-            PostgreSQL, plus LLM orchestration for automation that needs
-            judgment, not just rules.
+            then write the code. The tools change; the goal doesn&apos;t:
+            systems that quietly do their job every day.
           </p>
         </div>
         <Image
@@ -270,9 +269,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Live Demo */}
+      <section className="border-t border-line py-24">
+        <SectionLabel no="05" title="Live Demo" />
+        <h2 className="mt-12 font-display text-3xl sm:text-4xl max-w-2xl">
+          Don&apos;t take my word for it — click around.
+        </h2>
+        <p className="mt-6 max-w-xl text-lg text-soft leading-relaxed">
+          A working sample of the kind of system I build: invoices, inventory,
+          and a ledger that stays balanced. All sample data, in dollars.
+          Create an invoice, post it, watch the books move.
+        </p>
+        <a
+          href="/demo/erp"
+          className="mt-8 inline-block border-b border-ink pb-1 text-lg hover:text-accent hover:border-accent transition-colors"
+        >
+          Open the demo →
+        </a>
+      </section>
+
       {/* Contact */}
       <section id="contact" className="border-t border-line py-24 sm:py-32">
-        <SectionLabel no="05" title="Contact" />
+        <SectionLabel no="06" title="Contact" />
         <p className="mt-12 max-w-xl text-lg text-soft leading-relaxed">
           Have a project in mind, or want to talk systems first? Email is the
           fastest way to reach me.
