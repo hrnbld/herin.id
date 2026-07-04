@@ -30,12 +30,16 @@ const experience: Experience[] = [
     company: "PORTEE",
     period: "2023 — 2024",
     place: "Bandung",
+    detail:
+      "Led the full commercial org — offline stores, online store & marketplace, digital marketing, CRM, KOL, and content teams.",
   },
   {
     role: "Commercial Lead & Digital Marketing Manager",
     company: "Visval",
     period: "2021 — 2022",
     place: "Bandung",
+    detail:
+      "Managed online store & marketplace, digital marketing, CRM, and KOL strategy.",
   },
   {
     role: "Founder",
@@ -241,6 +245,10 @@ export default function Home() {
             I&apos;m Herin Yudha Pratama
           </span>
         </h1>
+        <p className="mt-6 max-w-lg text-lg text-soft leading-relaxed">
+          I design and build business-critical software for operations,
+          commerce, and AI automation.
+        </p>
       </section>
 
       {/* About */}
