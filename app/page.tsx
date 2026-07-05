@@ -3,6 +3,7 @@ import FadeIn from "./fade-in";
 import CountUp from "./count-up";
 import Typewriter from "./typewriter";
 import Aurora from "./aurora";
+import SilkBg from "./silk-bg";
 import GlassFx from "./glass-fx";
 import WordReveal from "./word-reveal";
 import Accordion, { type QA } from "./accordion";
@@ -341,6 +342,7 @@ export default function Home() {
   return (
     <div id="top">
       <Aurora />
+      <SilkBg />
       <GlassFx />
       <div className="relative z-10 overflow-hidden text-ink">
         {/* Hero */}
