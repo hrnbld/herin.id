@@ -759,6 +759,16 @@ export default function Home() {
                   <p className="mt-4 text-[11px] text-faint">
                     © {new Date().getFullYear()} Herin Yudha Pratama.
                   </p>
+                  <p className="mt-3 text-[11px] text-faint">
+                    This site speaks AI —{" "}
+                    <a href="/llms.txt" className="underline decoration-white/20 underline-offset-2 hover:text-ink">
+                      llms.txt
+                    </a>
+                    <span className="mx-1.5">·</span>
+                    <a href="/api/mcp" className="underline decoration-white/20 underline-offset-2 hover:text-ink">
+                      MCP endpoint
+                    </a>
+                  </p>
                 </div>
                 <div className="text-xs">
                   <p className="text-faint">Contact</p>

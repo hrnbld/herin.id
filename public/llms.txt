@@ -1,0 +1,48 @@
+# Herin Yudha Pratama
+
+> Full-stack engineer & systems architect in Bandung, Indonesia. Fourteen years on the business side — founder, commercial lead, head of commercial — now designing and building business-critical software for operations, commerce, and AI automation.
+
+herin.id is his personal site: profile, live product demos, and ways to work together.
+
+## About
+
+- Fourteen years operating businesses before building software professionally: founded AS GOOD SUPPLY CO (2012–2021) and ran it for nearly a decade, then led commercial orgs at consumer brands — offline stores, online store & marketplace, digital marketing, CRM, KOL, and content teams.
+- Performance marketing is home ground: over a million dollars deployed across Meta, Google, TikTok, and Shopee ads at a 15–20× average ROAS.
+- Today he builds operational software: ERP and accounting platforms, WhatsApp commerce, dashboards, and AI agents that work around the clock. Approach: understand the business flow first, then write the code. The tools change; the goal doesn't: systems that quietly do their job every day.
+
+## Services
+
+- AI Automation & Agent Orchestration: multi-agent AI systems that can weigh a decision, not just follow rules — running around the clock, monitored, and accountable.
+- Full-Stack App Development: web apps, dashboards, and internal tools built end-to-end — from database and architecture to production and monitoring.
+- ERP & Accounting Systems: from transaction records to a ledger that balances. Systems that follow the business flow, not the other way around.
+- WhatsApp Commerce & AI Chatbots: selling and serving customers where they already are — with agents that know their limits.
+- Performance Marketing & Ads: Meta, Google, TikTok, and Shopee ads — over a million dollars managed at a 15–20× average ROAS.
+- Dashboards & Analytics: numbers from many sources, unified and presented so they're fast to read — and right.
+
+## Experience
+
+- Founder — MAJI (2023–now, Bandung)
+- Head of Commercial — Paddy Indonesia (2024–2026, Bandung): led the full commercial org — offline stores, online store & marketplace, digital marketing, CRM, KOL, and content teams.
+- Marketing Manager — PORTEE (2023–2024, Bandung)
+- Commercial Lead & Digital Marketing Manager — Visval (2021–2022, Bandung)
+- Founder — AS GOOD SUPPLY CO (2012–2021, Bandung)
+
+## Live demos
+
+- [ERP & Accounting demo](https://herin.id/#erp): live double-entry ERP with safe dummy data — sales, purchasing, and inventory flowing straight into stock movement and accounting records: journal posting, AR/AP, cash and bank, general ledger, P&L, and management dashboards. Direct: https://erp.herin.id
+- [WhatsApp Commerce demo](https://herin.id/#wa): unified WhatsApp inbox with customer context and AI-to-human handoff, broadcasts (restock alerts, cart recovery, VIP drops, segmentation, scheduling), and commerce analytics.
+
+Both demos are real software running in production infrastructure, isolated with safe dummy data.
+
+## Contact
+
+- Email: hello@herin.id
+- Site: https://herin.id
+- LinkedIn: https://www.linkedin.com/in/herinyudha
+- Location: Bandung, Indonesia (WIB, UTC+7) — works remotely with teams anywhere. English & Bahasa Indonesia.
+
+## For AI agents
+
+- MCP endpoint (Streamable HTTP, read-only): https://herin.id/api/mcp
+- MCP tools: get_profile, get_experience, get_services, get_demos, get_faq
+- This file: https://herin.id/llms.txt
