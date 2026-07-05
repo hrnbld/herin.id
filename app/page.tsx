@@ -411,18 +411,42 @@ export default function Home() {
               <h2 className="mt-4 max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
                 <WordReveal
                   segments={[
-                    { text: "Fourteen years on the business side," },
-                    { text: "written into code.", soft: true },
+                    { text: "Fourteen years on the business side." },
                   ]}
                 />
               </h2>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-soft">
-                When the operation and the software are designed by the same
-                person, the seams disappear.
-              </p>
             </FadeIn>
-            <div className="mt-10 flex flex-col items-center gap-10 lg:flex-row lg:items-start">
-              <FadeIn delay={150} className="shrink-0">
+            <div className="mt-10 grid gap-12 lg:grid-cols-[1.4fr_auto] lg:items-start">
+              <FadeIn
+                delay={100}
+                className="max-w-xl space-y-6 text-base leading-relaxed text-soft"
+              >
+                <p>
+                  I spent fourteen years on the business side — founding AS
+                  GOOD SUPPLY CO and running it for nearly a decade, then
+                  leading commercial at consumer brands, running the full org:
+                  offline stores, online store &amp; marketplace, digital
+                  marketing, CRM, KOL, and content teams.
+                </p>
+                <p>
+                  Performance marketing is home ground — over a million
+                  dollars deployed across Meta, Google, TikTok, and Shopee ads
+                  at a 15–20× average ROAS. Somewhere along the way I started
+                  building the systems my teams needed, and never stopped.
+                </p>
+                <p className="text-faint">
+                  Today I build operational software: ERP and accounting
+                  platforms, WhatsApp commerce, dashboards, and AI agents that
+                  work around the clock. My approach is simple — understand
+                  the business flow first, then write the code. The tools
+                  change; the goal doesn&apos;t: systems that quietly do their
+                  job every day.
+                </p>
+              </FadeIn>
+              <FadeIn
+                delay={200}
+                className="flex items-center justify-center lg:justify-start"
+              >
                 <Image
                   src="/herin.jpg"
                   alt="Herin Yudha Pratama"
@@ -431,10 +455,10 @@ export default function Home() {
                   className="aspect-square w-40 rounded-full object-cover sm:w-52"
                 />
               </FadeIn>
-              <FadeIn delay={250} className="w-full min-w-0">
-                <LiquidStats />
-              </FadeIn>
             </div>
+            <FadeIn delay={250} className="mt-10">
+              <LiquidStats />
+            </FadeIn>
             </div>
           </div>
         </section>
