@@ -42,6 +42,7 @@ export default function EmailCopy() {
     try {
       await navigator.clipboard.writeText(EMAIL);
       setCopied(true);
+      window.dispatchEvent(new CustomEvent("herin:sound", { detail: "success" }));
       if (timerRef.current) clearTimeout(timerRef.current);
       timerRef.current = setTimeout(() => setCopied(false), 2000);
     } catch {
