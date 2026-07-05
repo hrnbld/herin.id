@@ -342,3 +342,27 @@ body {
 .rail {
   scrollbar-width: none;
 }
+
+/* Sound toggle HUD meter bars */
+@keyframes sound-bar {
+  0%,
+  100% {
+    height: 3px;
+  }
+  40% {
+    height: 12px;
+  }
+  70% {
+    height: 6px;
+  }
+}
+.sound-bar {
+  animation: sound-bar 1s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sound-bar {
+    animation: none;
+    height: 6px !important;
+  }
+}
