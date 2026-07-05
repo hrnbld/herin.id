@@ -12,7 +12,10 @@ export default function FadeIn({
   delay?: number;
 }) {
   const ref = React.useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = React.useState(false);
+  // Default visible so full-page screenshots, crawlers, and reduced-JS
+  // environments never see blank sections. IntersectionObserver only keeps
+  // the enhancement path; content itself is not gated behind animation.
+  const [visible, setVisible] = React.useState(true);
 
   React.useEffect(() => {
     const el = ref.current;

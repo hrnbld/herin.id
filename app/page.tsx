@@ -27,6 +27,8 @@ const experience: Experience[] = [
     company: "MAJI",
     period: "2023 — Now",
     place: "Bandung",
+    detail:
+      "Built and operated a consumer fragrance brand across product, content, marketplace, paid acquisition, and customer operations.",
   },
   {
     role: "Head of Commercial",
@@ -34,7 +36,7 @@ const experience: Experience[] = [
     period: "2024 — 2026",
     place: "Bandung",
     detail:
-      "Led the full commercial org — offline stores, online store & marketplace, digital marketing, CRM, KOL, and content teams.",
+      "Led commercial operations across offline stores, online store, marketplaces, CRM, KOL, content, and performance marketing.",
   },
   {
     role: "Marketing Manager",
@@ -42,7 +44,7 @@ const experience: Experience[] = [
     period: "2023 — 2024",
     place: "Bandung",
     detail:
-      "Led the full commercial org — offline stores, online store & marketplace, digital marketing, CRM, KOL, and content teams.",
+      "Managed growth across performance marketing, marketplace campaigns, CRM, KOL coordination, and digital acquisition.",
   },
   {
     role: "Commercial Lead & Digital Marketing Manager",
@@ -50,13 +52,15 @@ const experience: Experience[] = [
     period: "2021 — 2022",
     place: "Bandung",
     detail:
-      "Managed online store & marketplace, digital marketing, CRM, and KOL strategy.",
+      "Led online store, marketplace growth, performance marketing, CRM, and KOL strategy.",
   },
   {
     role: "Founder",
     company: "AS GOOD SUPPLY CO",
     period: "2012 — 2021",
     place: "Bandung",
+    detail:
+      "Founded and operated an independent apparel/supply brand for nearly a decade, covering product, sales, operations, and community-led growth.",
   },
 ];
 
@@ -89,7 +93,7 @@ const services = [
   {
     label: "AI Automation",
     title: "AI Automation & Agent Orchestration",
-    desc: "Multi-agent AI systems that can weigh a decision, not just follow rules — running around the clock, monitored, and accountable.",
+    desc: "AI workflows and agent orchestration for research, reporting, operations, support, and decision loops — with human checkpoints and practical monitoring.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
         <circle cx="24" cy="18" r="5" stroke="currentColor" strokeWidth="2" />
@@ -111,9 +115,9 @@ const services = [
     ),
   },
   {
-    label: "Full-Stack",
-    title: "Full-Stack App Development",
-    desc: "Web apps, dashboards, and internal tools built end-to-end — from database and architecture to production and monitoring.",
+    label: "AI Apps",
+    title: "AI-Assisted App Prototyping",
+    desc: "Internal apps, dashboards, and workflow tools shipped with AI-assisted development — scoped around real business flows, then tested in production.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
         <rect
@@ -139,7 +143,7 @@ const services = [
   {
     label: "ERP",
     title: "ERP & Accounting Systems",
-    desc: "From transaction records to a ledger that balances. Systems that follow the business flow, not the other way around.",
+    desc: "ERP-style workflows mapped from real operations: sales, purchasing, inventory, ledger, reporting, and operator dashboards.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
         <rect
@@ -233,7 +237,7 @@ const services = [
 const faqs: QA[] = [
   {
     q: "What do you actually build?",
-    a: "Operational software: ERP and accounting platforms, WhatsApp commerce systems, dashboards, and AI agents that run around the clock. End to end — database, architecture, code, deployment, and monitoring.",
+    a: "AI-assisted business systems: ERP-style internal tools, WhatsApp commerce dashboards, reporting, AI agents, and workflow orchestration. I’m not positioning as a traditional software engineer — the edge is operator context plus AI-assisted build workflow.",
   },
   {
     q: "Are the demos on this site real?",
@@ -241,11 +245,11 @@ const faqs: QA[] = [
   },
   {
     q: "How do we work together?",
-    a: "Business flow first, code second. We map how your operation actually runs, agree on a small scope that matters, ship it, and iterate. You get working software early — not a slide deck.",
+    a: "Business flow first, AI-assisted build second. We map how your operation actually runs, agree on a small scope that matters, ship it with the right tools and agents, then iterate from real usage.",
   },
   {
     q: "Can you handle the marketing side too?",
-    a: "That's home ground. Fourteen years on the commercial side — over a million dollars deployed across Meta, Google, TikTok, and Shopee ads at a 15–20× average ROAS.",
+    a: "That's home ground. Fourteen years on the commercial side — over a million dollars managed across Meta, Google, TikTok, and Shopee ads at a 15–20× average ROAS.",
   },
   {
     q: "Where are you based?",
@@ -367,8 +371,9 @@ export default function Home() {
                   I&apos;m Herin Yudha Pratama
                 </h1>
                 <p className="mt-5 max-w-xl text-sm leading-relaxed text-soft sm:text-base">
-                  I design and build business-critical software for operations,
-                  commerce, and AI automation.
+                  Commercial operator turned AI automation builder. I turn
+                  commerce workflows into practical apps, dashboards,
+                  WhatsApp systems, and agent orchestration.
                 </p>
                 <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
                   <a
@@ -417,7 +422,7 @@ export default function Home() {
               <h2 className="mt-4 max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
                 <WordReveal
                   segments={[
-                    { text: "Fourteen years on the business side." },
+                    { text: "Commercial operator turned AI automation builder." },
                   ]}
                 />
               </h2>
@@ -428,25 +433,22 @@ export default function Home() {
                 className="max-w-xl space-y-6 text-base leading-relaxed text-soft"
               >
                 <p>
-                  I spent fourteen years on the business side — founding AS
-                  GOOD SUPPLY CO and running it for nearly a decade, then
-                  leading commercial at consumer brands, running the full org:
-                  offline stores, online store &amp; marketplace, digital
-                  marketing, CRM, KOL, and content teams.
+                  I&apos;m not a traditional developer. My background is fourteen
+                  years in commerce — founding MAJI and AS GOOD SUPPLY CO,
+                  then leading and growing commercial teams across Paddy,
+                  PORTEE, and Visval.
                 </p>
                 <p>
-                  Performance marketing is home ground — over a million
-                  dollars deployed across Meta, Google, TikTok, and Shopee ads
-                  at a 15–20× average ROAS. Somewhere along the way I started
-                  building the systems my teams needed, and never stopped.
+                  That operator context is now the base for my AI automation
+                  work: using AI-assisted development, coding agents, APIs,
+                  and orchestration to turn real business workflows into
+                  practical apps, dashboards, WhatsApp systems, and
+                  optimization loops.
                 </p>
                 <p className="text-faint">
-                  Today I build operational software: ERP and accounting
-                  platforms, WhatsApp commerce, dashboards, and AI agents that
-                  work around the clock. My approach is simple — understand
-                  the business flow first, then write the code. The tools
-                  change; the goal doesn&apos;t: systems that quietly do their
-                  job every day.
+                  The value is not code for code&apos;s sake. It&apos;s knowing what
+                  the business needs, shaping the flow, shipping a working
+                  system, and improving it with AI.
                 </p>
               </FadeIn>
               <FadeIn
@@ -617,7 +619,7 @@ export default function Home() {
                 />
               </h2>
               <p className="mt-3 text-xs text-faint">
-                Fourteen years across brands, commerce, and systems
+                Fourteen years across brands, commerce, and AI-assisted systems
               </p>
             </FadeIn>
             <div className="mt-10 border-t border-line">
@@ -660,8 +662,8 @@ export default function Home() {
                 />
               </h2>
               <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-soft">
-                From ideas to production — I design, build, and run the
-                software layer of a business.
+                From business flow to working system — I design, orchestrate,
+                and ship practical AI-assisted tools.
               </p>
             </FadeIn>
             <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -725,13 +727,13 @@ export default function Home() {
                 <h2 className="mx-auto max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-5xl">
                   <WordReveal
                     segments={[
-                      { text: "Let's build systems" },
-                      { text: "that quietly do their job.", soft: true },
+                      { text: "Let's build useful systems" },
+                      { text: "around your real operation.", soft: true },
                     ]}
                   />
                 </h2>
                 <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-soft">
-                  From first conversation to software in production —
+                  From first conversation to working AI-assisted tools —
                   everything designed around how your business actually runs.
                 </p>
                 <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
@@ -751,8 +753,8 @@ export default function Home() {
                 <div>
                   <Logo />
                   <p className="mt-4 max-w-[230px] text-xs leading-relaxed text-faint">
-                    Business-critical software for operations, commerce, and AI
-                    automation — designed and built in Bandung.
+                    Commercial operations, AI-assisted apps, and automation
+                    systems — built from Bandung for teams anywhere.
                   </p>
                   <p className="mt-4 text-[11px] text-faint">
                     © {new Date().getFullYear()} Herin Yudha Pratama.

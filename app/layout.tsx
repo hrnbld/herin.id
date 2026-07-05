@@ -9,9 +9,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://herin.id"),
-  title: "Herin Yudha Pratama — Full-Stack Engineer & Systems Architect",
+  title: "Herin Yudha Pratama — AI Automation & Commerce Systems Builder",
   description:
-    "I design and build ERP, WhatsApp commerce, and AI automation for companies in Indonesia — from database to production. Based in Bandung.",
+    "Commercial operator turned AI automation builder: practical apps, dashboards, WhatsApp systems, and agent orchestration for commerce teams. Based in Bandung, working globally.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Herin Yudha Pratama",
     description:
-      "Full-Stack Engineer & Systems Architect — ERP, WhatsApp commerce, and AI automation for companies in Indonesia.",
+      "AI automation builder & commercial systems operator — practical apps, dashboards, WhatsApp systems, and agent orchestration for commerce teams.",
     url: "https://herin.id",
     siteName: "herin.id",
     locale: "en_US",

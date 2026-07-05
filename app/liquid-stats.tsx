@@ -31,7 +31,7 @@ export default function LiquidStats() {
       className="rounded-2xl border border-white/[0.12] bg-white/[0.05] p-6 sm:p-8"
     >
       <p className="text-xs text-accent-soft">
-        Performance marketing — deployed globally
+        Performance marketing — across commerce channels
       </p>
 
       <div className="mt-6 grid gap-8 sm:grid-cols-2">
@@ -40,7 +40,7 @@ export default function LiquidStats() {
             <CountUp value={1000000} prefix="$" suffix="+" />
           </p>
           <p className="mt-2 max-w-[240px] text-xs leading-relaxed text-soft">
-            Ad spend deployed and managed across four platforms
+            Ad spend managed across four commerce platforms
           </p>
         </div>
         <div>

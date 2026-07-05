@@ -5,7 +5,7 @@
 
 export const profile = {
   name: "Herin Yudha Pratama",
-  title: "Full-stack engineer & systems architect",
+  title: "AI automation builder & commercial systems operator",
   location: "Bandung, Indonesia",
   timezone: "WIB (UTC+7)",
   languages: ["English", "Bahasa Indonesia"],
@@ -13,15 +13,15 @@ export const profile = {
   email: "hello@herin.id",
   linkedin: "https://www.linkedin.com/in/herinyudha",
   summary:
-    "Fourteen years on the business side — founder, commercial lead, head of commercial — now designing and building business-critical software for operations, commerce, and AI automation. Approach: understand the business flow first, then write the code. The tools change; the goal doesn't: systems that quietly do their job every day.",
+    "Commercial operator with fourteen years across founder, marketing manager, commercial lead, and head-of-commercial roles — now using AI-assisted development, coding agents, APIs, and orchestration to turn commerce workflows into practical apps, dashboards, WhatsApp systems, and optimization loops. The edge is business flow first: understand the operation, then make the system work.",
   remote: "Works remotely with teams anywhere.",
 };
 
 export const trackRecord = {
-  adsSpend: "Over a million dollars deployed across Meta, Google, TikTok, and Shopee ads",
+  adsSpend: "Over a million dollars managed across Meta, Google, TikTok, and Shopee ads",
   averageRoas: "15–20×",
   commercialLeadership:
-    "Led full commercial orgs at consumer brands: offline stores, online store & marketplace, digital marketing, CRM, KOL, and content teams.",
+    "Led and grew commercial operations across consumer brands: offline stores, online store, marketplaces, CRM, KOL, content, and performance marketing.",
   yearsOperating: 14,
 };
 
@@ -31,6 +31,8 @@ export const experience = [
     company: "MAJI",
     period: "2023 — now",
     place: "Bandung",
+    detail:
+      "Built and operated a consumer fragrance brand across product, content, marketplace, paid acquisition, and customer operations.",
   },
   {
     role: "Head of Commercial",
@@ -38,7 +40,7 @@ export const experience = [
     period: "2024 — 2026",
     place: "Bandung",
     detail:
-      "Led the full commercial org — offline stores, online store & marketplace, digital marketing, CRM, KOL, and content teams.",
+      "Led commercial operations across offline stores, online store, marketplaces, CRM, KOL, content, and performance marketing.",
   },
   {
     role: "Marketing Manager",
@@ -46,7 +48,7 @@ export const experience = [
     period: "2023 — 2024",
     place: "Bandung",
     detail:
-      "Led the full commercial org — offline stores, online store & marketplace, digital marketing, CRM, KOL, and content teams.",
+      "Managed growth across performance marketing, marketplace campaigns, CRM, KOL coordination, and digital acquisition.",
   },
   {
     role: "Commercial Lead & Digital Marketing Manager",
@@ -54,28 +56,30 @@ export const experience = [
     period: "2021 — 2022",
     place: "Bandung",
     detail:
-      "Managed online store & marketplace, digital marketing, CRM, and KOL strategy.",
+      "Led online store, marketplace growth, performance marketing, CRM, and KOL strategy.",
   },
   {
     role: "Founder",
     company: "AS GOOD SUPPLY CO",
     period: "2012 — 2021",
     place: "Bandung",
+    detail:
+      "Founded and operated an independent apparel/supply brand for nearly a decade, covering product, sales, operations, and community-led growth.",
   },
 ];
 
 export const services = [
   {
     title: "AI Automation & Agent Orchestration",
-    desc: "Multi-agent AI systems that can weigh a decision, not just follow rules — running around the clock, monitored, and accountable.",
+    desc: "AI workflows and agent orchestration for research, reporting, operations, support, and decision loops — with human checkpoints and practical monitoring.",
   },
   {
-    title: "Full-Stack App Development",
-    desc: "Web apps, dashboards, and internal tools built end-to-end — from database and architecture to production and monitoring.",
+    title: "AI-Assisted App Prototyping",
+    desc: "Internal apps, dashboards, and workflow tools shipped with AI-assisted development — scoped around real business flows, then tested in production.",
   },
   {
     title: "ERP & Accounting Systems",
-    desc: "From transaction records to a ledger that balances. Systems that follow the business flow, not the other way around.",
+    desc: "ERP-style workflows mapped from real operations: sales, purchasing, inventory, ledger, reporting, and operator dashboards.",
   },
   {
     title: "WhatsApp Commerce & AI Chatbots",
@@ -96,7 +100,7 @@ export const demos = [
     name: "ERP & Accounting demo",
     url: "https://herin.id/#erp",
     directUrl: "https://erp.herin.id",
-    desc: "Live double-entry ERP with safe dummy data: sales, purchasing, and inventory flow straight into stock movement and accounting records — journal posting, AR/AP, cash and bank, general ledger, P&L, and management dashboards.",
+    desc: "Live ERP-style operations demo with safe dummy data: sales, purchasing, and inventory flow straight into stock movement and accounting records — journal posting, AR/AP, cash and bank, general ledger, P&L, and management dashboards.",
   },
   {
     name: "WhatsApp Commerce demo",
@@ -108,7 +112,7 @@ export const demos = [
 export const faqs = [
   {
     q: "What do you actually build?",
-    a: "Operational software: ERP and accounting platforms, WhatsApp commerce systems, dashboards, and AI agents that run around the clock. End to end — database, architecture, code, deployment, and monitoring.",
+    a: "AI-assisted business systems: ERP-style internal tools, WhatsApp commerce dashboards, reporting, AI agents, and workflow orchestration. Herin is not positioning as a traditional software engineer; the edge is operator context plus AI-assisted build workflow.",
   },
   {
     q: "Are the demos on this site real?",
@@ -116,11 +120,11 @@ export const faqs = [
   },
   {
     q: "How do we work together?",
-    a: "Business flow first, code second. We map how your operation actually runs, agree on a small scope that matters, ship it, and iterate. You get working software early — not a slide deck.",
+    a: "Business flow first, AI-assisted build second. We map how your operation actually runs, agree on a small scope that matters, ship it with the right tools and agents, then iterate from real usage.",
   },
   {
     q: "Can you handle the marketing side too?",
-    a: "That's home ground. Fourteen years on the commercial side — over a million dollars deployed across Meta, Google, TikTok, and Shopee ads at a 15–20× average ROAS.",
+    a: "That's home ground. Fourteen years on the commercial side — over a million dollars managed across Meta, Google, TikTok, and Shopee ads at a 15–20× average ROAS.",
   },
   {
     q: "Where are you based?",
