@@ -31,6 +31,67 @@ body {
   background: #0d0b0a;
 }
 
+/* Film grain over everything */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Frosted glass panel behind text blocks */
+.glass {
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 28px;
+  box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.7);
+}
+
+/* Aurora blobs drifting behind the glass */
+@keyframes aurora-a {
+  0%,
+  100% {
+    transform: translate(-8%, -4%) scale(1);
+  }
+  50% {
+    transform: translate(10%, 8%) scale(1.18);
+  }
+}
+@keyframes aurora-b {
+  0%,
+  100% {
+    transform: translate(6%, 4%) scale(1.1);
+  }
+  50% {
+    transform: translate(-10%, -8%) scale(0.92);
+  }
+}
+@keyframes aurora-c {
+  0%,
+  100% {
+    transform: translate(0, 6%) scale(1);
+  }
+  50% {
+    transform: translate(8%, -6%) scale(1.22);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-\[aurora-a_26s_ease-in-out_infinite\],
+  .animate-\[aurora-b_34s_ease-in-out_infinite\],
+  .animate-\[aurora-c_42s_ease-in-out_infinite\],
+  .animate-marquee,
+  .animate-float-soft {
+    animation: none;
+  }
+}
+
 ::selection {
   background: #c94f2b;
   color: #f4f1ec;

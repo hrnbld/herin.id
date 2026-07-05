@@ -2,7 +2,7 @@ import Image from "next/image";
 import FadeIn from "./fade-in";
 import CountUp from "./count-up";
 import Typewriter from "./typewriter";
-import Starfield from "./starfield";
+import Aurora from "./aurora";
 import WordReveal from "./word-reveal";
 import Accordion, { type QA } from "./accordion";
 
@@ -339,46 +339,39 @@ function BrowserCard({
 export default function Home() {
   return (
     <div id="top">
-      <div className="relative overflow-hidden bg-canvas text-ink">
+      <Aurora />
+      <div className="relative z-10 overflow-hidden text-ink">
         {/* Hero */}
-        <section className="relative overflow-hidden pt-24 sm:pt-32">
-          <Image
-            src="/textures/rock-3.jpg"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            className="pointer-events-none object-cover object-top opacity-35 [mask-image:linear-gradient(to_bottom,black,transparent_78%)]"
-          />
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_50%_at_50%_0%,transparent_30%,#0d0b0a_100%)]" />
-          <Starfield className="[mask-image:linear-gradient(to_bottom,black_60%,transparent)]" />
+        <section className="relative overflow-hidden pt-16 sm:pt-24">
           <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
-            <FadeIn className="flex flex-col items-center text-center">
-              <h1 className="max-w-3xl text-4xl font-light leading-[1.12] tracking-tight text-ink sm:text-6xl">
-                <Typewriter
-                  words={["Hello.", "Halo.", "Bonjour.", "Hola.", "こんにちは."]}
-                  className="text-accent-soft"
-                />
-                <br />
-                I&apos;m Herin Yudha Pratama
-              </h1>
-              <p className="mt-5 max-w-xl text-sm leading-relaxed text-soft sm:text-base">
-                I design and build business-critical software for operations,
-                commerce, and AI automation.
-              </p>
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-                <a
-                  href="#erp"
-                  className="rounded-full border border-line bg-white/[0.05] px-5 py-2.5 text-sm text-ink backdrop-blur-sm transition-colors hover:bg-white/[0.1]"
-                >
-                  Try the live demos
-                </a>
-                <a
-                  href="mailto:hello@herin.id"
-                  className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#0d0b0a] transition-colors hover:bg-white/85"
-                >
-                  Get in touch
-                </a>
+            <FadeIn>
+              <div className="glass mx-auto flex max-w-3xl flex-col items-center px-6 py-12 text-center sm:px-14 sm:py-16">
+                <h1 className="max-w-3xl text-4xl font-light leading-[1.12] tracking-tight text-ink sm:text-6xl">
+                  <Typewriter
+                    words={["Hello.", "Halo.", "Bonjour.", "Hola.", "こんにちは."]}
+                    className="text-accent-soft"
+                  />
+                  <br />
+                  I&apos;m Herin Yudha Pratama
+                </h1>
+                <p className="mt-5 max-w-xl text-sm leading-relaxed text-soft sm:text-base">
+                  I design and build business-critical software for operations,
+                  commerce, and AI automation.
+                </p>
+                <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+                  <a
+                    href="#erp"
+                    className="rounded-full border border-line bg-white/[0.05] px-5 py-2.5 text-sm text-ink backdrop-blur-sm transition-colors hover:bg-white/[0.1]"
+                  >
+                    Try the live demos
+                  </a>
+                  <a
+                    href="mailto:hello@herin.id"
+                    className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#0d0b0a] transition-colors hover:bg-white/85"
+                  >
+                    Get in touch
+                  </a>
+                </div>
               </div>
             </FadeIn>
 
@@ -406,6 +399,7 @@ export default function Home() {
         {/* About / quote band */}
         <section className="py-16 sm:py-24">
           <div className="mx-auto max-w-5xl px-5 sm:px-8">
+            <div className="glass p-7 sm:p-12">
             <FadeIn>
               <Eyebrow>About</Eyebrow>
               <h2 className="mt-4 max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
@@ -479,127 +473,86 @@ export default function Home() {
                 </div>
               </FadeIn>
             </div>
+            </div>
           </div>
         </section>
 
         {/* ERP demo section */}
         <section id="erp" className="scroll-mt-24 py-16 sm:py-24">
-          <div className="mx-auto max-w-5xl px-5 sm:px-8">
-            <div className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-              <FadeIn>
-                <Eyebrow tone="accent">ERP &amp; Accounting — live demo</Eyebrow>
-                <h2 className="mt-4 text-3xl font-light leading-tight tracking-tight sm:text-4xl">
-                  <WordReveal
-                    segments={[
-                      { text: "From transaction records" },
-                      { text: "to a ledger that balances.", soft: true },
-                    ]}
-                  />
-                </h2>
-                <p className="mt-4 text-sm leading-relaxed text-soft">
-                  Signatech ERP connects every transaction: customer orders,
-                  warehouse movement, vendor bills, cash flow, and financial
-                  reports — one source of truth.
-                </p>
-                <ul className="mt-6">
-                  {erpChecks.map((item) => (
-                    <li
-                      key={item}
-                      className="flex gap-3 border-b border-line py-3 text-sm text-soft first:pt-0"
-                    >
-                      <Check />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-7 flex flex-wrap gap-2">
-                  {erpChips.map((chip) => (
-                    <span
-                      key={chip}
-                      className="rounded-full border border-line bg-white/[0.04] px-3.5 py-1.5 text-xs text-soft"
-                    >
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-                <a
-                  href="/demo/erp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#0d0b0a] transition-colors hover:bg-white/85"
-                >
-                  Open full ERP demo
-                  <span
-                    aria-hidden="true"
-                    className="inline-block animate-[demo-arrow_1s_ease-in-out_infinite]"
-                  >
-                    →
-                  </span>
-                </a>
-              </FadeIn>
-              <FadeIn delay={120}>
-                <div className="relative overflow-hidden rounded-3xl border border-line">
-                  <Image
-                    src="/textures/rock-2.jpg"
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 560px, 100vw"
-                    className="object-cover opacity-40"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(160deg,rgba(13,11,10,0.75),rgba(13,11,10,0.92))]" />
-                  <div className="relative p-6 sm:p-8">
-                    <div className="animate-float-soft rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-md">
-                      <p className="text-xs font-medium text-ink">
-                        Why teams switch to it
-                      </p>
-                      <ul className="mt-4 space-y-3 text-xs leading-relaxed text-soft">
-                        <li className="flex gap-2.5">
-                          <Check />
-                          Operational documents automatically become stock
-                          movement and journal entries.
-                        </li>
-                        <li className="flex gap-2.5">
-                          <Check />
-                          Cleaner controls, faster reconciliation, fewer
-                          spreadsheet handoffs.
-                        </li>
-                        <li className="flex gap-2.5">
-                          <Check />
-                          Built for Indonesian business flows — from faktur to
-                          general ledger.
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {["Quotation → Order", "Goods receipt", "GL posting", "P&L"].map(
-                        (chip) => (
-                          <span
-                            key={chip}
-                            className="rounded-full border border-white/10 bg-black/30 px-3 py-1.5 text-[11px] text-soft backdrop-blur-sm"
-                          >
-                            {chip}
-                          </span>
-                        )
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-            </div>
-            <FadeIn delay={150}>
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <FadeIn className="text-center">
+              <Eyebrow tone="accent">ERP &amp; Accounting — live demo</Eyebrow>
+            </FadeIn>
+            <FadeIn delay={80}>
               <BrowserCard
                 url="erp.herin.id"
                 fullHref="/demo/erp"
-                className="mt-12"
+                className="mt-6"
               >
                 <iframe
                   src={ERP_DEMO_URL}
                   title="Interactive ERP demo"
                   loading="lazy"
                   allow="clipboard-write"
-                  className="h-[62vh] min-h-[520px] w-full bg-white"
+                  className="h-[68vh] min-h-[540px] w-full bg-white"
                 />
               </BrowserCard>
+            </FadeIn>
+            <FadeIn delay={140}>
+              <div className="glass mt-8 grid gap-10 p-7 sm:p-10 lg:grid-cols-[1fr_1.1fr]">
+                <div>
+                  <h2 className="text-3xl font-light leading-tight tracking-tight sm:text-4xl">
+                    <WordReveal
+                      segments={[
+                        { text: "From transaction records" },
+                        { text: "to a ledger that balances.", soft: true },
+                      ]}
+                    />
+                  </h2>
+                  <p className="mt-4 text-sm leading-relaxed text-soft">
+                    Signatech ERP connects every transaction: customer orders,
+                    warehouse movement, vendor bills, cash flow, and financial
+                    reports — one source of truth.
+                  </p>
+                  <a
+                    href="/demo/erp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-8 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#0d0b0a] transition-colors hover:bg-white/85"
+                  >
+                    Open full ERP demo
+                    <span
+                      aria-hidden="true"
+                      className="inline-block animate-[demo-arrow_1s_ease-in-out_infinite]"
+                    >
+                      →
+                    </span>
+                  </a>
+                </div>
+                <div>
+                  <ul>
+                    {erpChecks.map((item) => (
+                      <li
+                        key={item}
+                        className="flex gap-3 border-b border-line py-3 text-sm text-soft first:pt-0"
+                      >
+                        <Check />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {erpChips.map((chip) => (
+                      <span
+                        key={chip}
+                        className="rounded-full border border-line bg-white/[0.04] px-3.5 py-1.5 text-xs text-soft"
+                      >
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </FadeIn>
           </div>
         </section>
@@ -611,25 +564,12 @@ export default function Home() {
           <div className="mx-auto max-w-[1400px] px-4 sm:px-6">
             <FadeIn className="text-center">
               <Eyebrow tone="accent">Automation — live demo</Eyebrow>
-              <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
-                <WordReveal
-                  segments={[
-                    { text: "WhatsApp becomes" },
-                    { text: "a measurable sales channel.", soft: true },
-                  ]}
-                />
-              </h2>
-              <p className="mx-auto mt-4 max-w-lg text-sm leading-relaxed text-soft">
-                A real WhatsApp commerce dashboard with safe dummy data — AI
-                replies, campaign automation, checkout links, and human
-                takeover in one operating view.
-              </p>
             </FadeIn>
-            <FadeIn delay={120}>
+            <FadeIn delay={80}>
               <BrowserCard
                 url="wa-commerce-demo-herin.vercel.app"
                 fullHref={WA_DEMO_URL}
-                className="mt-10"
+                className="mt-6"
               >
                 <iframe
                   src={WA_DEMO_URL}
@@ -640,22 +580,43 @@ export default function Home() {
                 />
               </BrowserCard>
             </FadeIn>
-            <div className="mx-auto mt-10 grid max-w-5xl gap-6 sm:grid-cols-3">
-              {waChecks.map((item, i) => (
-                <FadeIn key={item} delay={i * 100}>
-                  <div className="flex gap-3 text-sm leading-relaxed text-soft">
-                    <Check />
-                    {item}
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
+            <FadeIn delay={140}>
+              <div className="glass mx-auto mt-8 grid max-w-6xl gap-10 p-7 sm:p-10 lg:grid-cols-[1fr_1.1fr]">
+                <div>
+                  <h2 className="text-3xl font-light leading-tight tracking-tight sm:text-4xl">
+                    <WordReveal
+                      segments={[
+                        { text: "WhatsApp becomes" },
+                        { text: "a measurable sales channel.", soft: true },
+                      ]}
+                    />
+                  </h2>
+                  <p className="mt-4 max-w-lg text-sm leading-relaxed text-soft">
+                    A real WhatsApp commerce dashboard with safe dummy data —
+                    AI replies, campaign automation, checkout links, and human
+                    takeover in one operating view.
+                  </p>
+                </div>
+                <ul>
+                  {waChecks.map((item) => (
+                    <li
+                      key={item}
+                      className="flex gap-3 border-b border-line py-3 text-sm text-soft first:pt-0"
+                    >
+                      <Check />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </FadeIn>
           </div>
         </section>
 
         {/* Experience */}
         <section id="experience" className="scroll-mt-24 py-16 sm:py-24">
           <div className="mx-auto max-w-3xl px-5 sm:px-8">
+            <div className="glass p-7 sm:p-10">
             <FadeIn className="text-center">
               <Eyebrow>Experience</Eyebrow>
               <h2 className="mx-auto mt-4 max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
@@ -691,6 +652,7 @@ export default function Home() {
                 </FadeIn>
               ))}
             </div>
+            </div>
           </div>
         </section>
 
@@ -715,7 +677,7 @@ export default function Home() {
             <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((s, i) => (
                 <FadeIn key={s.title} delay={(i % 3) * 100}>
-                  <div className="glow-top group h-full rounded-3xl border border-line bg-card p-6 transition-colors hover:border-white/15">
+                  <div className="glass glow-top group h-full p-6 transition-colors hover:border-white/20">
                     <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white/[0.04] text-accent-soft transition-colors group-hover:text-accent">
                       {s.icon}
                     </span>
@@ -759,32 +721,34 @@ export default function Home() {
         {/* CTA + footer */}
         <section id="contact" className="relative overflow-hidden pt-16 sm:pt-24">
           <div className="mx-auto max-w-5xl px-5 sm:px-8">
-            <FadeIn className="text-center">
-              <h2 className="mx-auto max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-5xl">
-                <WordReveal
-                  segments={[
-                    { text: "Let's build systems" },
-                    { text: "that quietly do their job.", soft: true },
-                  ]}
-                />
-              </h2>
-              <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-soft">
-                From first conversation to software in production — everything
-                designed around how your business actually runs.
-              </p>
-              <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-                <a
-                  href="#erp"
-                  className="rounded-full border border-line bg-white/[0.05] px-5 py-2.5 text-sm text-ink transition-colors hover:bg-white/[0.1]"
-                >
-                  Try the demos
-                </a>
-                <a
-                  href="mailto:hello@herin.id"
-                  className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#0d0b0a] transition-colors hover:bg-white/85"
-                >
-                  hello@herin.id
-                </a>
+            <FadeIn>
+              <div className="glass mx-auto max-w-3xl px-6 py-12 text-center sm:px-14 sm:py-14">
+                <h2 className="mx-auto max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-5xl">
+                  <WordReveal
+                    segments={[
+                      { text: "Let's build systems" },
+                      { text: "that quietly do their job.", soft: true },
+                    ]}
+                  />
+                </h2>
+                <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-soft">
+                  From first conversation to software in production —
+                  everything designed around how your business actually runs.
+                </p>
+                <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
+                  <a
+                    href="#erp"
+                    className="rounded-full border border-line bg-white/[0.05] px-5 py-2.5 text-sm text-ink transition-colors hover:bg-white/[0.1]"
+                  >
+                    Try the demos
+                  </a>
+                  <a
+                    href="mailto:hello@herin.id"
+                    className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#0d0b0a] transition-colors hover:bg-white/85"
+                  >
+                    hello@herin.id
+                  </a>
+                </div>
               </div>
             </FadeIn>
 
