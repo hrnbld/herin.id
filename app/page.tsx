@@ -502,7 +502,7 @@ export default function Home() {
                     />
                   </h2>
                   <p className="mt-4 text-sm leading-relaxed text-soft">
-                    Signatech ERP connects every transaction: customer orders,
+                    The ERP connects every transaction: customer orders,
                     warehouse movement, vendor bills, cash flow, and financial
                     reports — one source of truth.
                   </p>
