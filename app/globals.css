@@ -43,14 +43,92 @@ body::after {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Frosted glass panel behind text blocks */
+/* Frosted glass panel behind text blocks — animated:
+   cursor specular (via --mx/--my from GlassFx), rotating border
+   shimmer (::before), periodic sheen sweep (::after). */
+@property --glass-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .glass {
-  background: rgba(255, 255, 255, 0.045);
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      480px circle at var(--mx, -500px) var(--my, -500px),
+      rgba(255, 255, 255, 0.07),
+      transparent 45%
+    ),
+    rgba(255, 255, 255, 0.045);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 28px;
   box-shadow: 0 30px 80px -40px rgba(0, 0, 0, 0.7);
+}
+
+.glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--glass-angle),
+    transparent 0%,
+    rgba(217, 122, 84, 0.55) 8%,
+    transparent 17%,
+    transparent 52%,
+    rgba(244, 241, 236, 0.28) 60%,
+    transparent 69%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: glass-spin 9s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes glass-spin {
+  to {
+    --glass-angle: 360deg;
+  }
+}
+
+.glass::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 58%
+  );
+  background-size: 260% 100%;
+  background-position: 130% 0;
+  animation: glass-sheen 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes glass-sheen {
+  0% {
+    background-position: 130% 0;
+  }
+  45% {
+    background-position: -30% 0;
+  }
+  100% {
+    background-position: -30% 0;
+  }
 }
 
 /* Aurora blobs drifting behind the glass */
@@ -87,7 +165,9 @@ body::after {
   .animate-\[aurora-b_34s_ease-in-out_infinite\],
   .animate-\[aurora-c_42s_ease-in-out_infinite\],
   .animate-marquee,
-  .animate-float-soft {
+  .animate-float-soft,
+  .glass::before,
+  .glass::after {
     animation: none;
   }
 }

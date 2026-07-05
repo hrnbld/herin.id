@@ -3,6 +3,7 @@ import FadeIn from "./fade-in";
 import CountUp from "./count-up";
 import Typewriter from "./typewriter";
 import Aurora from "./aurora";
+import GlassFx from "./glass-fx";
 import WordReveal from "./word-reveal";
 import Accordion, { type QA } from "./accordion";
 
@@ -340,6 +341,7 @@ export default function Home() {
   return (
     <div id="top">
       <Aurora />
+      <GlassFx />
       <div className="relative z-10 overflow-hidden text-ink">
         {/* Hero */}
         <section className="relative overflow-hidden pt-16 sm:pt-24">
@@ -677,7 +679,7 @@ export default function Home() {
             <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((s, i) => (
                 <FadeIn key={s.title} delay={(i % 3) * 100}>
-                  <div className="glass glow-top group h-full p-6 transition-colors hover:border-white/20">
+                  <div className="glass group h-full p-6 transition-colors hover:border-white/20">
                     <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white/[0.04] text-accent-soft transition-colors group-hover:text-accent">
                       {s.icon}
                     </span>
