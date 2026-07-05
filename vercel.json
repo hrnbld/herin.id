@@ -1,0 +1,40 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "https://herin-os.vercel.app/"
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "/glass/api/:path*"
+    },
+    {
+      "source": "/llms.txt",
+      "destination": "/glass/llms.txt"
+    },
+    {
+      "source": "/noise.png",
+      "destination": "/glass/noise.png"
+    },
+    {
+      "source": "/land-dots.json",
+      "destination": "/glass/land-dots.json"
+    },
+    {
+      "source": "/herin.jpg",
+      "destination": "/glass/herin.jpg"
+    },
+    {
+      "source": "/herin-headshot.jpg",
+      "destination": "/glass/herin-headshot.jpg"
+    },
+    {
+      "source": "/textures/:path*",
+      "destination": "/glass/textures/:path*"
+    },
+    {
+      "source": "/demo/:path*",
+      "destination": "/glass/demo/:path*"
+    }
+  ]
+}
