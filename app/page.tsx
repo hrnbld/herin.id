@@ -6,6 +6,7 @@ import Aurora from "./aurora";
 import SilkBg from "./silk-bg";
 import Lens from "./lens";
 import LiquidStats from "./liquid-stats";
+import LocationCard from "./location-card";
 import GlassFx from "./glass-fx";
 import WordReveal from "./word-reveal";
 import Accordion, { type QA } from "./accordion";
@@ -682,6 +683,15 @@ export default function Home() {
                 </FadeIn>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* Location globe */}
+        <section id="location" className="scroll-mt-24 py-16 sm:py-24">
+          <div className="mx-auto max-w-5xl px-5 sm:px-8">
+            <FadeIn>
+              <LocationCard />
+            </FadeIn>
           </div>
         </section>
 
