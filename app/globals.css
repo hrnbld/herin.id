@@ -41,7 +41,9 @@ body {
      the flicker jumps never reveal an edge. */
   position: absolute;
   inset: -90px;
-  z-index: 70;
+  /* Below the content (z-10): grain textures the background only —
+     glass panels blur it away and stay clean and transparent. */
+  z-index: 0;
   pointer-events: none;
   opacity: 0.085;
   background-image: url("/noise.png");
