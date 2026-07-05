@@ -9,6 +9,7 @@ import LiquidStats from "./liquid-stats";
 import LocationCard from "./location-card";
 import EmailCopy from "./email-copy";
 import GlassFx from "./glass-fx";
+import Sound from "./sound";
 import WordReveal from "./word-reveal";
 import Accordion, { type QA } from "./accordion";
 
@@ -350,6 +351,7 @@ export default function Home() {
       <div aria-hidden="true" className="grain" />
       <Lens />
       <GlassFx />
+      <Sound />
       <div className="relative z-10 overflow-hidden text-ink">
         {/* Hero */}
         <section className="relative overflow-hidden pt-16 sm:pt-24">
