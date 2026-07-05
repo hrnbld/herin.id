@@ -4,6 +4,7 @@ import CountUp from "./count-up";
 import Typewriter from "./typewriter";
 import Aurora from "./aurora";
 import SilkBg from "./silk-bg";
+import Lens from "./lens";
 import LiquidStats from "./liquid-stats";
 import GlassFx from "./glass-fx";
 import WordReveal from "./word-reveal";
@@ -345,6 +346,7 @@ export default function Home() {
       <Aurora />
       <SilkBg />
       <div aria-hidden="true" className="grain" />
+      <Lens />
       <GlassFx />
       <div className="relative z-10 overflow-hidden text-ink">
         {/* Hero */}
