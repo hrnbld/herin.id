@@ -422,7 +422,7 @@ export default function Home() {
               <h2 className="mt-4 max-w-xl text-3xl font-light leading-tight tracking-tight sm:text-4xl">
                 <WordReveal
                   segments={[
-                    { text: "Commercial operator turned AI automation builder." },
+                    { text: "Fourteen years on the business side." },
                   ]}
                 />
               </h2>
@@ -433,22 +433,25 @@ export default function Home() {
                 className="max-w-xl space-y-6 text-base leading-relaxed text-soft"
               >
                 <p>
-                  I&apos;m not a traditional developer. My background is fourteen
-                  years in commerce — founding MAJI and AS GOOD SUPPLY CO,
-                  then leading and growing commercial teams across Paddy,
-                  PORTEE, and Visval.
+                  I spent fourteen years on the business side — founding AS
+                  GOOD SUPPLY CO and running it for nearly a decade, then
+                  leading commercial at consumer brands, running the full org:
+                  offline stores, online store &amp; marketplace, digital
+                  marketing, CRM, KOL, and content teams.
                 </p>
                 <p>
-                  That operator context is now the base for my AI automation
-                  work: using AI-assisted development, coding agents, APIs,
-                  and orchestration to turn real business workflows into
-                  practical apps, dashboards, WhatsApp systems, and
-                  optimization loops.
+                  Performance marketing is home ground — over a million
+                  dollars deployed across Meta, Google, TikTok, and Shopee ads
+                  at a 15–20× average ROAS. Somewhere along the way I started
+                  building the systems my teams needed, and never stopped.
                 </p>
                 <p className="text-faint">
-                  The value is not code for code&apos;s sake. It&apos;s knowing what
-                  the business needs, shaping the flow, shipping a working
-                  system, and improving it with AI.
+                  Today I build operational software: ERP and accounting
+                  platforms, WhatsApp commerce, dashboards, and AI agents that
+                  work around the clock. My approach is simple — understand
+                  the business flow first, then write the code. The tools
+                  change; the goal doesn&apos;t: systems that quietly do their
+                  job every day.
                 </p>
               </FadeIn>
               <FadeIn
