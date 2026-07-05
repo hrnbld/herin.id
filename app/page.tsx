@@ -340,9 +340,10 @@ function BrowserCard({
 
 export default function Home() {
   return (
-    <div id="top">
+    <div id="top" className="relative">
       <Aurora />
       <SilkBg />
+      <div aria-hidden="true" className="grain" />
       <GlassFx />
       <div className="relative z-10 overflow-hidden text-ink">
         {/* Hero */}

@@ -41,9 +41,15 @@ float fbm(vec2 p) {
 }
 
 void main() {
-  vec2 uv = (gl_FragCoord.xy - 0.5 * u_res) / u_res.y;
+  // Normalize by the SHORTER side so portrait phones see the full
+  // pattern range instead of a thin slice of it.
+  float mn = min(u_res.x, u_res.y);
+  vec2 uv = (gl_FragCoord.xy - 0.5 * u_res) / mn;
   uv += u_mouse * 0.06;
   float t = u_time * 0.045;
+  // Portrait screens show less background around the glass panels,
+  // so push the silk brighter there.
+  float boost = u_res.y > u_res.x ? 1.5 : 1.0;
 
   vec2 q = vec2(
     fbm(uv * 1.4 + t * vec2(0.9, 0.3)),
@@ -61,9 +67,13 @@ void main() {
   vec3 amber = vec3(0.851, 0.478, 0.329);
 
   vec3 col = base;
-  col = mix(col, deep, smoothstep(0.25, 0.85, f) * 0.9);
-  col = mix(col, rust * 0.55, smoothstep(0.45, 0.95, q.y * f) * 0.8);
-  col += amber * pow(max(r.x * f - 0.25, 0.0), 2.0) * 0.55;
+  col = mix(col, deep, min(smoothstep(0.25, 0.85, f) * 0.9 * boost, 1.0));
+  col = mix(
+    col,
+    rust * 0.55,
+    min(smoothstep(0.45, 0.95, q.y * f) * 0.8 * boost, 1.0)
+  );
+  col += amber * pow(max(r.x * f - 0.25, 0.0), 2.0) * 0.55 * boost;
 
   float vig = 1.0 - dot(uv * 0.75, uv * 0.75);
   col *= clamp(vig, 0.35, 1.0);
@@ -154,6 +164,9 @@ export default function SilkBg() {
       canvas.width = Math.round(window.innerWidth * dpr * RES_SCALE);
       canvas.height = Math.round(window.innerHeight * dpr * RES_SCALE);
       gl.viewport(0, 0, canvas.width, canvas.height);
+      // Repaint immediately so rotation/resize never shows a stale
+      // or unpainted buffer.
+      draw(last);
     };
 
     const draw = (t: number) => {
