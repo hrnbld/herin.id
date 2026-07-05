@@ -62,42 +62,42 @@ void main() {
   float f = fbm(uv * 0.85 + r * 2.3);
   float g = q.x;
 
-  vec3 black  = vec3(0.045, 0.04, 0.038);
-  vec3 ember  = vec3(0.86, 0.30, 0.10);
-  vec3 rust   = vec3(0.72, 0.27, 0.14);
-  vec3 indigo = vec3(0.11, 0.16, 0.38);
-  vec3 teal   = vec3(0.13, 0.36, 0.30);
-  vec3 wine   = vec3(0.48, 0.10, 0.09);
-  vec3 cream  = vec3(0.93, 0.90, 0.84);
+  vec3 black   = vec3(0.03, 0.02, 0.05);
+  vec3 purple  = vec3(0.62, 0.18, 0.96);
+  vec3 violet  = vec3(0.36, 0.10, 0.72);
+  vec3 magenta = vec3(0.94, 0.16, 0.78);
+  vec3 blue    = vec3(0.16, 0.22, 0.94);
+  vec3 cyan    = vec3(0.12, 0.80, 0.95);
+  vec3 glow    = vec3(0.90, 0.82, 1.0);
 
   float band = smoothstep(0.18, 0.52, g);
   float core = smoothstep(0.34, 0.72, f);
   float hot  = pow(max(f - 0.68, 0.0) / 0.32, 2.4);
 
-  // Hero: ember core over indigo band on black
-  vec3 cA = mix(black, indigo, band);
-  cA = mix(cA, ember, core);
-  cA += cream * hot * 0.6;
+  // Hero: neon purple core over an electric blue band on near-black
+  vec3 cA = mix(black, blue * 0.55, band);
+  cA = mix(cA, purple, core);
+  cA += glow * hot * 0.55;
 
-  // Middle: rust over teal — earthier
-  vec3 cB = mix(black, teal, band);
-  cB = mix(cB, rust, core);
-  cB += cream * hot * 0.55;
+  // Middle: magenta over deep violet
+  vec3 cB = mix(black, violet * 0.7, band);
+  cB = mix(cB, magenta * 0.85, core);
+  cB += cyan * hot * 0.45;
 
-  // Bottom: wine and indigo, cooler and darker
-  vec3 cC = mix(black, wine, smoothstep(0.22, 0.62, f));
-  cC = mix(cC, indigo, smoothstep(0.48, 0.85, g));
-  cC += cream * hot * 0.65;
+  // Bottom: cyan streaks over violet on black
+  vec3 cC = mix(black, violet * 0.8, smoothstep(0.22, 0.62, f));
+  cC = mix(cC, cyan * 0.7, smoothstep(0.52, 0.88, g));
+  cC += purple * hot * 0.6;
 
   vec3 col = mix(cA, cB, smoothstep(0.15, 0.45, u_scroll));
   col = mix(col, cC, smoothstep(0.55, 0.92, u_scroll));
 
-  // Iridescent oil-slick rim where the fields meet
+  // Iridescent rim — stronger, it sells the neon
   float rim = 1.0 - smoothstep(0.0, 0.09, abs(f - 0.55));
   vec3 iri = 0.5 + 0.5 * cos(6.2831 * (f * 3.0 + vec3(0.0, 0.33, 0.67)));
-  col += iri * rim * 0.09;
+  col += iri * rim * 0.14;
 
-  col *= boost * 0.88;
+  col *= boost * 0.9;
 
   float vig = 1.0 - dot(uv * 0.62, uv * 0.62);
   col *= clamp(vig, 0.42, 1.0);
