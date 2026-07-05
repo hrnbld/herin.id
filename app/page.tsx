@@ -4,6 +4,7 @@ import CountUp from "./count-up";
 import Typewriter from "./typewriter";
 import Aurora from "./aurora";
 import SilkBg from "./silk-bg";
+import LiquidStats from "./liquid-stats";
 import GlassFx from "./glass-fx";
 import WordReveal from "./word-reveal";
 import Accordion, { type QA } from "./accordion";
@@ -180,7 +181,7 @@ const services = [
   {
     label: "Ads",
     title: "Performance Marketing & Ads",
-    desc: "Meta, Google, TikTok, and Shopee ads — tens of billions of rupiah managed at a 15–20× average ROAS.",
+    desc: "Meta, Google, TikTok, and Shopee ads — over a million dollars managed at a 15–20× average ROAS.",
     icon: (
       <svg viewBox="0 0 48 48" fill="none" className="h-6 w-6">
         <path
@@ -240,7 +241,7 @@ const faqs: QA[] = [
   },
   {
     q: "Can you handle the marketing side too?",
-    a: "That's home ground. Fourteen years on the commercial side — tens of billions of rupiah deployed across Meta, Google, TikTok, and Shopee ads at a 15–20× average ROAS.",
+    a: "That's home ground. Fourteen years on the commercial side — over a million dollars deployed across Meta, Google, TikTok, and Shopee ads at a 15–20× average ROAS.",
   },
   {
     q: "Where are you based?",
@@ -420,37 +421,8 @@ export default function Home() {
                 person, the seams disappear.
               </p>
             </FadeIn>
-            <div className="mt-10 grid gap-12 lg:grid-cols-[1.4fr_auto] lg:items-start">
-              <FadeIn
-                delay={100}
-                className="max-w-xl space-y-6 text-base leading-relaxed text-soft"
-              >
-                <p>
-                  I spent fourteen years on the business side — founding AS
-                  GOOD SUPPLY CO and running it for nearly a decade, then
-                  leading commercial at consumer brands, running the full org:
-                  offline stores, online store &amp; marketplace, digital
-                  marketing, CRM, KOL, and content teams.
-                </p>
-                <p>
-                  Performance marketing is home ground — tens of billions of
-                  rupiah deployed across Meta, Google, TikTok, and Shopee ads
-                  at a 15–20× average ROAS. Somewhere along the way I started
-                  building the systems my teams needed, and never stopped.
-                </p>
-                <p className="text-faint">
-                  Today I build operational software: ERP and accounting
-                  platforms, WhatsApp commerce, dashboards, and AI agents that
-                  work around the clock. My approach is simple — understand
-                  the business flow first, then write the code. The tools
-                  change; the goal doesn&apos;t: systems that quietly do their
-                  job every day.
-                </p>
-              </FadeIn>
-              <FadeIn
-                delay={200}
-                className="flex items-center gap-8 lg:flex-col lg:items-start lg:gap-10"
-              >
+            <div className="mt-10 flex flex-col items-center gap-10 lg:flex-row lg:items-start">
+              <FadeIn delay={150} className="shrink-0">
                 <Image
                   src="/herin.jpg"
                   alt="Herin Yudha Pratama"
@@ -458,24 +430,9 @@ export default function Home() {
                   height={400}
                   className="aspect-square w-40 rounded-full object-cover sm:w-52"
                 />
-                <div className="flex gap-10 lg:flex-col lg:gap-6">
-                  <div>
-                    <p className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
-                      <CountUp value={20} prefix="15–" suffix="×" />
-                    </p>
-                    <p className="mt-1 max-w-[150px] text-xs leading-relaxed text-soft">
-                      Average ROAS across Meta, Google, TikTok &amp; Shopee
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-3xl font-light tracking-tight text-ink sm:text-4xl">
-                      <CountUp value={10} prefix="Rp" suffix="B+" />
-                    </p>
-                    <p className="mt-1 max-w-[150px] text-xs leading-relaxed text-soft">
-                      Ad spend deployed and managed
-                    </p>
-                  </div>
-                </div>
+              </FadeIn>
+              <FadeIn delay={250} className="w-full min-w-0">
+                <LiquidStats />
               </FadeIn>
             </div>
             </div>
