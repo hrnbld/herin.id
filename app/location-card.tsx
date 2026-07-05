@@ -26,16 +26,6 @@ export default function LocationCard() {
         <p className="mt-4 max-w-md text-sm leading-relaxed text-soft">
           {text}
         </p>
-        <div className="mt-6 flex flex-wrap gap-2">
-          {["UTC+7", "Remote-friendly", "English / Bahasa"].map((chip) => (
-            <span
-              key={chip}
-              className="rounded-full border border-line bg-white/[0.04] px-3.5 py-1.5 text-xs text-soft"
-            >
-              {chip}
-            </span>
-          ))}
-        </div>
       </div>
       <div className="mx-auto h-[280px] w-[280px] sm:h-[360px] sm:w-[360px]">
         <Globe onGeo={onGeo} />

@@ -7,6 +7,7 @@ import SilkBg from "./silk-bg";
 import Lens from "./lens";
 import LiquidStats from "./liquid-stats";
 import LocationCard from "./location-card";
+import EmailCopy from "./email-copy";
 import GlassFx from "./glass-fx";
 import WordReveal from "./word-reveal";
 import Accordion, { type QA } from "./accordion";
@@ -740,12 +741,7 @@ export default function Home() {
                   >
                     Try the demos
                   </a>
-                  <a
-                    href="mailto:hello@herin.id"
-                    className="rounded-full bg-white px-5 py-2.5 text-sm font-medium text-[#0d0b0a] transition-colors hover:bg-white/85"
-                  >
-                    hello@herin.id
-                  </a>
+                  <EmailCopy />
                 </div>
               </div>
             </FadeIn>
