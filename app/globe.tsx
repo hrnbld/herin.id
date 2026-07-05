@@ -74,19 +74,26 @@ export default function Globe({
     const bandungVec = toVec(BANDUNG.lat, BANDUNG.lng);
 
     // Camera: phi rotates around Y (longitude), tilt leans toward the
-    // latitude of interest. Animated from visitor toward the midpoint.
+    // latitude of interest. Flies from the visitor's view to Bandung.
+    const clampTilt = (v: number) => Math.max(-1.35, Math.min(1.35, v));
     let phiFrom = BANDUNG.lng * RAD;
     let phiTo = BANDUNG.lng * RAD;
-    let tiltTo = -BANDUNG.lat * RAD * 0.6;
+    let tiltFrom = clampTilt(-BANDUNG.lat * RAD * 0.6);
+    let tiltTo = tiltFrom;
 
     const setupCamera = () => {
       if (!visitor) return;
-      const mid = slerp(toVec(visitor.lat, visitor.lng), bandungVec, 0.5);
-      const midLat = Math.asin(mid[1]) / RAD;
-      const midLng = Math.atan2(mid[0], mid[2]) / RAD;
+      // Fly from the visitor's longitude to Bandung, then keep a slow
+      // idle spin (handled in draw) so the whole route sweeps through
+      // view — avoids degenerate camera angles on near-antipodal
+      // routes.
       phiFrom = visitor.lng * RAD;
-      phiTo = midLng * RAD;
-      tiltTo = -midLat * RAD * 0.6;
+      tiltFrom = clampTilt(-visitor.lat * RAD * 0.5);
+      phiTo = BANDUNG.lng * RAD;
+      tiltTo = -0.28;
+      // take the short way around
+      if (phiTo - phiFrom > Math.PI) phiTo -= Math.PI * 2;
+      if (phiFrom - phiTo > Math.PI) phiTo += Math.PI * 2;
     };
 
     const size = () => {
@@ -106,11 +113,15 @@ export default function Globe({
       const R = Math.min(w, h) * 0.42;
 
       const elapsed = start ? (now - start) / 1000 : 0;
-      const ease = reduced ? 1 : Math.min(elapsed / 2.6, 1);
+      const ease = reduced ? 1 : Math.min(elapsed / 3.2, 1);
       const e = 1 - Math.pow(1 - ease, 3);
-      const wobble = reduced ? 0 : Math.sin(now / 4200) * 0.045;
-      const phi = phiFrom + (phiTo - phiFrom) * e + wobble;
-      const tilt = tiltTo * e + (reduced ? 0 : Math.sin(now / 5100) * 0.02);
+      // After arriving, keep a slow idle spin so the arc sweeps through
+      const drift = reduced ? 0 : Math.max(0, elapsed - 3.2) * 0.085;
+      const phi = phiFrom + (phiTo - phiFrom) * e + drift;
+      const tilt =
+        tiltFrom +
+        (tiltTo - tiltFrom) * e +
+        (reduced ? 0 : Math.sin(now / 5100) * 0.02);
 
       const cosP = Math.cos(phi);
       const sinP = Math.sin(phi);
@@ -192,14 +203,32 @@ export default function Globe({
         const visitorVec = toVec(visitor.lat, visitor.lng);
         drawMarker(visitorVec, "rgba(158,46,245,0.95)", 1000);
 
-        const reveal = reduced ? 1 : Math.min(Math.max((elapsed - 0.8) / 1.8, 0), 1);
+        // Long routes arc higher so they loop over the horizon instead
+        // of clipping at the limb.
+        const dotAB = Math.min(
+          Math.max(
+            visitorVec[0] * bandungVec[0] +
+              visitorVec[1] * bandungVec[1] +
+              visitorVec[2] * bandungVec[2],
+            -1
+          ),
+          1
+        );
+        const altMax = 0.14 + 0.38 * (Math.acos(dotAB) / Math.PI);
+        // A point is hidden only when it is behind the globe AND inside
+        // its silhouette — elevated arc points outside the disc stay
+        // visible against the sky.
+        const hidden = (sx: number, sy: number, zt: number) =>
+          zt < 0 && Math.hypot(sx - cx, sy - cy) < R - 0.5;
+
+        const reveal = reduced ? 1 : Math.min(Math.max((elapsed - 1.2) / 2.0, 0), 1);
         if (reveal > 0) {
-          const N = 72;
+          const N = 88;
           const pts: [number, number, number][] = [];
           for (let i = 0; i <= N * reveal; i++) {
             const t = i / N;
             const v = slerp(visitorVec, bandungVec, t);
-            pts.push(project(v, Math.sin(Math.PI * t) * 0.18));
+            pts.push(project(v, Math.sin(Math.PI * t) * altMax));
           }
           const [ax, ay] = pts[0];
           const [bx, by] = pts[pts.length - 1];
@@ -209,7 +238,7 @@ export default function Globe({
           ctx.beginPath();
           let started = false;
           for (const [sx, sy, zt] of pts) {
-            if (zt <= -0.08) {
+            if (hidden(sx, sy, zt)) {
               started = false;
               continue;
             }
@@ -231,8 +260,8 @@ export default function Globe({
           if (!reduced && reveal >= 1) {
             const pt = ((now % 2600) / 2600) as number;
             const v = slerp(visitorVec, bandungVec, pt);
-            const [sx, sy, zt] = project(v, Math.sin(Math.PI * pt) * 0.18);
-            if (zt > -0.08) {
+            const [sx, sy, zt] = project(v, Math.sin(Math.PI * pt) * altMax);
+            if (!hidden(sx, sy, zt)) {
               ctx.beginPath();
               ctx.arc(sx, sy, 2.4, 0, Math.PI * 2);
               ctx.fillStyle = "rgba(244,241,236,0.95)";
