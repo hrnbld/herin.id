@@ -65,7 +65,7 @@ const experience: Experience[] = [
 ];
 
 const ERP_DEMO_URL = "https://erp.herin.id/login?embed=1&callbackUrl=%2F";
-const WA_DEMO_URL = "https://wa-commerce-demo-herin.vercel.app/dashboard";
+const WA_DEMO_URL = "https://wa-demo.herin.id/dashboard";
 
 const brands = [
   "MAJI",
@@ -562,7 +562,7 @@ export default function Home() {
             </FadeIn>
             <FadeIn delay={80}>
               <BrowserCard
-                url="wa-commerce-demo-herin.vercel.app"
+                url="wa-demo.herin.id"
                 fullHref={WA_DEMO_URL}
                 className="mt-6"
               >
